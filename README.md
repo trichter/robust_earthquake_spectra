@@ -4,7 +4,9 @@ This repository contains the source code for the reproduction of results and fig
 
 Tom Eulenfeld, Sebastian Heimann, Torsten Dahm and Ulrich Wegler (2021),
 Fast and robust earthquake source spectra and moment magnitudes from envelope inversion,
-submitted to *Bulletin of the Seismological Society of America*. [[preprint](https://arxiv.org/pdf/????)]
+submitted to *Bulletin of the Seismological Society of America*. <!---[[preprint]()]-->
+
+Additionally, this repository contains result files and figures.
 
 #### Preparation
 
@@ -49,5 +51,5 @@ Switch to the `scripts` directory and run all the `plot*.py` python scripts. The
 #### Results
 
 The above scripts repopulate the folders `figs`, `grond`, `onsets` and `qopen`.
-The results for Qopen are located in the `qopen` folder. Grond results can be viewed [here]() [(doi)]().
+The results for Qopen are located in the `qopen` folder. Grond results can be viewed [here](https://data.pyrocko.org/publications/grond-reports/west-bohemia-2018/) <!---([doi]())-->.
 Results from the spectra of direct onsets are located in the `onsets` folder. All created figures are stored in the `figs` folder.
