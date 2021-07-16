@@ -1,0 +1,93 @@
+%YAML 1.1
+# Grond config for 2018 Bohemian swarm earthquakes
+--- !grond.Config
+
+rundir_template: 'runs/${problem_name}.grun'
+
+dataset_config: !grond.DatasetConfig
+  stations_stationxml_paths: ['../data/webnet_9stations.xml']
+  responses_stationxml_paths: ['../data/webnet_9stations.xml']
+  events_path: '../data/pyrocko_events/${event_name}_event.pf'
+  waveform_paths: ['../data/waveforms_event/${event_name}']
+
+target_groups:
+- !grond.WaveformTargetGroup
+  normalisation_family: 'td'
+  path: 'P'
+  distance_min: 0e3
+  distance_max: 35e3
+  channels: ['Z']
+  weight: 1.0
+  misfit_config: !grond.WaveformMisfitConfig
+    fmin: 1
+    fmax: 3
+    ffactor: 1.5
+    tmin: '{stored:p}-0.25'
+    tmax: '{stored:p}+0.25'
+    tfade: 0.25
+    domain: 'time_domain'
+    tautoshift_max: 0.15
+    autoshift_penalty_max: 0.2  # autoshift_penalty_max * normalization_factor * tautoshift**2 / tautoshift_max**2
+    norm_exponent: 1
+  interpolation: 'nearest_neighbor'
+  store_id: 'vogtland_scatter_v4'
+
+- !grond.WaveformTargetGroup
+  normalisation_family: 'td'
+  path: 'S'
+  distance_min: 0e3
+  distance_max: 35e3
+  channels: ['T']
+  weight: 1.0
+  misfit_config: !grond.WaveformMisfitConfig
+    fmin: 1
+    fmax: 3
+    ffactor: 1.5
+    tmin: '{stored:s}-0.25'
+    tmax: '{stored:s}+0.25'
+    tfade: 0.25
+    domain: 'time_domain'
+    tautoshift_max: 0.15
+    autoshift_penalty_max: 0.2
+    norm_exponent: 1
+  interpolation: 'nearest_neighbor'
+  store_id: 'vogtland_scatter_v4'
+
+problem_config: !grond.CMTProblemConfig
+  name_template: 'cmt_${event_name}'
+  ranges:
+    time: '-0.5 .. 0.5 | add'
+    north_shift: '-4e3 .. 4e3'
+    east_shift: '-4e3 .. 4e3'
+    depth: '5e3 .. 14e3'
+    magnitude: '1 .. 4'
+    rmnn: '-1.41421 .. 1.41421'
+    rmee: '-1.41421 .. 1.41421'
+    rmdd: '-1.41421 .. 1.41421'
+    rmne: '-1 .. 1'
+    rmnd: '-1 .. 1'
+    rmed: '-1 .. 1'
+    duration: '0.01 .. 0.5'
+  distance_min: 0e3
+  mt_type: 'deviatoric'
+  norm_exponent: 1
+
+analyser_configs:
+- !grond.TargetBalancingAnalyserConfig
+  niterations: 5000
+
+optimiser_config: !grond.HighScoreOptimiserConfig
+  nbootstrap: 100
+  sampler_phases:
+  - !grond.UniformSamplerPhase
+      niterations: 5000
+  - !grond.DirectedSamplerPhase
+      niterations: 50000
+      scatter_scale_begin: 3.0
+      scatter_scale_end: 1.0
+  - !grond.DirectedSamplerPhase
+      niterations: 50000
+      scatter_scale: 1.0
+
+engine_config: !grond.EngineConfig
+  gf_stores_from_pyrocko_config: true
