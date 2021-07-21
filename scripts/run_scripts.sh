@@ -1,0 +1,9 @@
+python calc_onset_spectra_and_plot_comparison.py
+python plot_fits.py
+python plot_focal_mechanisms.py
+python plot_mags.py
+python plot_maps.py
+python plotQ.py
+python plot_sds_fc_sites.py
+python plot_topomap.py
+bash montage_grond_fits.sh
