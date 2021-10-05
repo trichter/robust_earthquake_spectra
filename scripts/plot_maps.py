@@ -2,6 +2,7 @@
 
 from matplotlib.dates import DateFormatter
 from matplotlib.colorbar import ColorbarBase
+from matplotlib.colors import LogNorm
 from matplotlib.ticker import MultipleLocator
 import matplotlib.pyplot as plt
 import numpy as np
@@ -11,7 +12,8 @@ from pyrocko.plot import beachball
 from qopen.source import moment_magnitude
 
 from prepare_data import load_full_catalog
-from util.events import events2lists, load_grond, load_qopen, get_norm
+from util.events import (events2lists, load_grond, load_qopen,
+                         load_qopen_grond_sds, get_norm)
 from util.imaging import convert_coords2km
 
 
@@ -33,7 +35,7 @@ def Ml2cumM0(evids, mags):
 
 def plot_events_stations_map_depth(events, inv=None, figsize=(8,8), out=None, show=True, cmap='turbo',
                                    dpi=300, convert_coords=False, all_events=None, colorbar=True, label=True, ms=9,
-                                   plot_fm=False, plot_color_ax=False):
+                                   plot_fm=False, plot_sd=False, plot_color_ax=False):
     """
     Modified from github.com/trichter/inter_source_interferometry
     """
@@ -65,7 +67,6 @@ def plot_events_stations_map_depth(events, inv=None, figsize=(8,8), out=None, sh
                 if ax == ax4:
                     ax5.set_ylim(ax4.get_xlim()[::-1])
                 boo[0] = True
-
     if not plot_fm:
         ax5.invert_yaxis()
         ax5.callbacks.connect('ylim_changed', _on_lims_changed)
@@ -76,7 +77,6 @@ def plot_events_stations_map_depth(events, inv=None, figsize=(8,8), out=None, sh
         ax3.xaxis.set_label_position("top")
         ax4.xaxis.tick_top()
         ax4.xaxis.set_label_position("top")
-
 
     if convert_coords:
         latlon0 = None if convert_coords==True else convert_coords
@@ -105,6 +105,11 @@ def plot_events_stations_map_depth(events, inv=None, figsize=(8,8), out=None, sh
                 color_t=cmap(norm(t)),
                 linewidth=0.5,
                 zorder=-100)
+    elif plot_sd:
+        sd_scatter = ax3.scatter(x, y, 10, plot_sd, cmap=cmap,
+                                 norm=LogNorm())
+        ax4.scatter(dep, y, 10, plot_sd, cmap=cmap, norm=LogNorm())
+        ax5.scatter(x, dep, 10, plot_sd, cmap=cmap, norm=LogNorm())
     else:
         ax3.scatter(x, y, ms, mpl, cmap=cmap, norm=norm)
         ax4.scatter(dep, y, ms, mpl, cmap=cmap, norm=norm)
@@ -112,32 +117,55 @@ def plot_events_stations_map_depth(events, inv=None, figsize=(8,8), out=None, sh
     if colorbar:
         if plot_fm:
             ax7 = fig.add_axes([0.1, 0.08, 0.34, 0.02])
+        elif plot_sd:
+            ax7 = fig.add_axes([0.1, 0.03, 0.34, 0.02])
         else:
             ax7 = fig.add_axes([0.56, 0.42, 0.34, 0.02])
-        cbar = ColorbarBase(ax7, cmap=cmap, norm=norm, orientation='horizontal', format=DateFormatter('%Y-%m-%d'), extend='max')
-        cbar.ax.xaxis.set_minor_locator(MultipleLocator(1))
-        cbar.set_ticks([UTC(f'2018-05-{day}').matplotlib_date for day in (10, 13, 16, 19, 22, 25, 26)])
-        cbar.ax.set_xticklabels(cbar.ax.get_xticklabels()[:-1] + ['until 2018-06-19'], rotation=60, ha='right', rotation_mode='anchor')
+        if plot_sd:
+            cbar = plt.colorbar(sd_scatter, cax=ax7, orientation='horizontal')
+            cbar.set_label('stress drop (Pa)')
+        else:
+            cbar = ColorbarBase(ax7, cmap=cmap, norm=norm, orientation='horizontal', format=DateFormatter('%Y-%m-%d'), extend='max')
+            cbar.ax.xaxis.set_minor_locator(MultipleLocator(1))
+            cbar.set_ticks([UTC(f'2018-05-{day}').matplotlib_date for day in (10, 13, 16, 19, 22, 25, 26)])
+            cbar.ax.set_xticklabels(cbar.ax.get_xticklabels()[:-1] + ['until 2018-06-19'], rotation=60, ha='right', rotation_mode='anchor')
     if plot_color_ax:
         figy0 = 0.18
         axc = fig.add_axes((0.5, figy0, 0.3, 0.25))
         axc2 = fig.add_axes((0.81, figy0, 0.1, 0.25), sharey=axc)
-        axc3 = axc.twinx()
-        axc4 = axc2.twinx()
-        axc3.get_shared_y_axes().join(axc3, axc4)
         mpl_br = UTC('2018-05-27').matplotlib_date
 
-        to_plot = np.array(list(zip(mpl, mag, mag**4, mpl)))
-        axc.scatter(mpl3[mpl3<=mpl_br], mag3[mpl3<=mpl_br], 4, '0.6', clip_on=False)
-        axc2.scatter(mpl3[mpl3>mpl_br], mag3[mpl3>mpl_br], 4, '0.6', clip_on=False)
-        axc.scatter(*list(zip(*to_plot[mpl<=mpl_br])), cmap=cmap, norm=norm, linewidths=0.5, edgecolors='k', clip_on=False)
-        axc2.scatter(*list(zip(*to_plot[mpl>mpl_br])), cmap=cmap, norm=norm, linewidths=0.5, edgecolors='k', clip_on=False)
-
-        cumM0 = Ml2cumM0(id2, mag2)
-        axc3.plot(mpl2, cumM0, 'k')
-        cumM0[mpl2<=mpl_br-0.5] = cumM0[mpl2<=mpl_br-0.5][-1]
-        axc4.plot(mpl2, cumM0, 'k')
-        print(f'sum M0 = {cumM0[-1]:.3e} Nm')
+        if plot_sd:
+            to_plot = np.array(list(zip(mpl, mag, [30]*len(mag), plot_sd)))
+            if all_events:
+                axc.scatter(mpl3[mpl3<=mpl_br], mag3[mpl3<=mpl_br], 4, '0.6', clip_on=False)
+                axc2.scatter(mpl3[mpl3>mpl_br], mag3[mpl3>mpl_br], 4, '0.6', clip_on=False)
+            axc.scatter(*list(zip(*to_plot[mpl<=mpl_br])), cmap=cmap, norm=LogNorm(), linewidths=0.5, edgecolors='k', clip_on=False)
+            axc2.scatter(*list(zip(*to_plot[mpl>mpl_br])), cmap=cmap, norm=LogNorm(), linewidths=0.5, edgecolors='k', clip_on=False)
+        else:
+            to_plot = np.array(list(zip(mpl, mag, mag**4, mpl)))
+            if all_events:
+                axc.scatter(mpl3[mpl3<=mpl_br], mag3[mpl3<=mpl_br], 4, '0.6', clip_on=False)
+                axc2.scatter(mpl3[mpl3>mpl_br], mag3[mpl3>mpl_br], 4, '0.6', clip_on=False)
+            axc.scatter(*list(zip(*to_plot[mpl<=mpl_br])), cmap=cmap, norm=norm, linewidths=0.5, edgecolors='k', clip_on=False)
+            axc2.scatter(*list(zip(*to_plot[mpl>mpl_br])), cmap=cmap, norm=norm, linewidths=0.5, edgecolors='k', clip_on=False)
+        if all_events:
+            axc3 = axc.twinx()
+            axc4 = axc2.twinx()
+            axc3.get_shared_y_axes().join(axc3, axc4)
+            cumM0 = Ml2cumM0(id2, mag2)
+            axc3.plot(mpl2, cumM0, 'k')
+            cumM0[mpl2<=mpl_br-0.5] = cumM0[mpl2<=mpl_br-0.5][-1]
+            axc4.plot(mpl2, cumM0, 'k')
+            print(f'sum M0 = {cumM0[-1]:.3e} Nm')
+            axc3.tick_params(axis='y', which='both', right=False, labelright=False)
+            axc4.ticklabel_format(axis='y', useMathText=True)
+            axc3.spines['right'].set_visible(False)
+            axc4.spines['left'].set_visible(False)
+            axc3.spines['top'].set_visible(False)
+            axc4.spines['top'].set_visible(False)
+            axc4.set_ylim(0, None)
+            axc4.set_ylabel('cumulative seismic moment (Nm)')
 
         axc.xaxis.set_major_formatter(DateFormatter('%Y-%m-%d'))
         axc2.xaxis.set_major_formatter(DateFormatter('%Y-%m-%d'))
@@ -145,21 +173,14 @@ def plot_events_stations_map_depth(events, inv=None, figsize=(8,8), out=None, sh
         axc2.set_xlim(mpl_br-4, None)
 
         axc2.tick_params(axis='y', which='both', left=False, labelleft=False)
-        axc3.tick_params(axis='y', which='both', right=False, labelright=False)
         plt.setp(axc.get_xticklabels(), rotation=60, ha='right', rotation_mode='anchor')
         plt.setp(axc2.get_xticklabels(), rotation=60, ha='right', rotation_mode='anchor')
-        axc4.ticklabel_format(axis='y', useMathText=True)
         axc.set_yticks([1.5, 2, 2.5, 3, 3.5])
 
         axc.spines['right'].set_visible(False)
         axc2.spines['left'].set_visible(False)
-        axc3.spines['right'].set_visible(False)
-        axc4.spines['left'].set_visible(False)
         axc.spines['top'].set_visible(False)
         axc2.spines['top'].set_visible(False)
-        axc3.spines['top'].set_visible(False)
-        axc4.spines['top'].set_visible(False)
-        axc4.set_ylim(0, None)
         axc.set_xticks([UTC(f'2018-05-{day}').matplotlib_date for day in (10, 13, 16, 19, 22, 25)])
         axc2.set_xticks([UTC(f'2018-{day}').matplotlib_date for day in ('05-29', '06-08', '06-18')])
         # broken axis
@@ -169,7 +190,6 @@ def plot_events_stations_map_depth(events, inv=None, figsize=(8,8), out=None, sh
         axc2.plot((0.81-d, 0.81+d), (figy0-d, figy0+d), **kw)
 
         axc.set_ylabel(r'WEBNET local magnitude $M_{\rm l}$')
-        axc4.set_ylabel('cumulative seismic moment (Nm)')
         akw = dict(xycoords='axes fraction', textcoords='offset points', size='x-large')
         ax3.annotate('a)', (0, 1), (-20, 10), **akw)
         axc.annotate('b)', (0, 1), (-30, 10), **akw)
@@ -234,6 +254,28 @@ def plot_grond_focal_mechanisms_map(add_inset=True):
     fig.savefig('../figs/focal_mechanisms_map.pdf', bbox_inches='tight', pad_inches=0.1, dpi=400)
 
 
+def plot_stress_drops_map():
+    from plot_sds_fc_sites import fc2stress_drop
+    pevents = load_qopen_grond_sds()
+    events = []
+    stress_drops = []
+    for evid, ev in pevents.items():
+        ref = ev['ref']
+        qev = ev['qopen']
+        pars = [ref.name, UTC(ref.time), ref.lon, ref.lat, ref.depth/1000,
+                ref.magnitude]
+        events.append(pars)
+        stress_drops.append(fc2stress_drop(qev['fc'], qev['M0']))
+
+    fig = plot_events_stations_map_depth(zip(*events), convert_coords=LATLON0,
+                                         plot_color_ax=True, cmap='plasma',
+                                         plot_sd=stress_drops, show=False)
+    fig.axes[0].set_xlim(-1.2, 1.2)
+    fig.axes[0].set_ylim(-2.3, 2.7)
+    fig.axes[0].set_rasterization_zorder(-50)
+    fig.savefig('../figs/stress_drops_map.pdf', bbox_inches='tight', pad_inches=0.1, dpi=400)
+
+
 if __name__ == '__main__':
     print('load events')
     allevents = load_full_catalog()
@@ -241,3 +283,4 @@ if __name__ == '__main__':
     allevents = obspy.Catalog(sorted(allevents, key=lambda ev: ev.origins[0].time))
     plot_events2018(allevents)
     plot_grond_focal_mechanisms_map()
+    plot_stress_drops_map()
