@@ -53,3 +53,13 @@ Switch to the `scripts` directory and run all the `plot*.py` python scripts. The
 The above scripts repopulate the folders `figs`, `grond`, `onsets` and `qopen`.
 The results for Qopen are located in the `qopen` folder. Grond results can be viewed [here](https://data.pyrocko.org/publications/grond-reports/west-bohemia-2018/) <!---([doi]())-->.
 Results from the spectra of direct onsets are located in the `onsets` folder. All created figures are stored in the `figs` folder.
+Results can be loaded into Python with the following Python code inside the scripts directory:
+
+```
+from util.events import load_grond, load_qopen, load_qopen_grond_sds
+
+qopen_results = load_qopen('Q')  # Load g0 and b values
+qopen_event_results = load_qopen('events')  # Load fc, M0, etc determined with Qopen
+grond_results = load_grond()  # Grond moment tensors, etc
+all_results = load_qopen_grond_sds()  # Load a dictionary {event_id: event_result} with all event related results
+```
