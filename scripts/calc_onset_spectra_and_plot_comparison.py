@@ -142,9 +142,9 @@ def calc_onset_spectra_and_compare(evid, compare_without_radpat=False,
     for _ in range(4):
         ax1.plot([], [], 'wx', label=' ')  # ghost legend entry
     ax1.plot(qfreq, qsds, color='C1', lw=2, label='Qopen')
-    ax1.axhline(qM0, 0.6, color='C1', lw=2, ls='--', label='Qopen $M_0$', zorder=12)
+    ax1.axhline(qM0, 0.6, 0.89, color='C1', lw=2, ls='--', label='Qopen $M_0$', zorder=12)
     fc_handle = ax1.axvline(qfc, 0.5, color='C1', lw=2, ls='--', label=r'Qopen $f_{\rm c}$', alpha=0.5, zorder=-2)
-    ax1.axhline(mt.moment, 0.6, color='C0', lw=2, ls='--', label='Grond $M_0$', zorder=11)
+    ax1.axhline(mt.moment, 0.6, 0.95,  color='C0', lw=2, ls='--', label='Grond $M_0$', zorder=11)
     ax1.axhline(np.median(onset_M0s), 0.6, color='C6', lw=2, ls='--', label='onset $M_0$', zorder=10)
     ax1.annotate(evid, (0.98, 0.98), xycoords='axes fraction',
                  ha='right', va='top')
