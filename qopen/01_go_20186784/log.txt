@@ -1,0 +1,507 @@
+2021-10-06 17:23:46,470 core  108435INFO    Qopen version 4.1-dev
+2021-10-06 17:23:46,675 core  108435INFO    read inventory with 9 stations
+2021-10-06 17:23:47,548 core  108435INFO    read 151 events
+2021-10-06 17:23:47,549 core  108435INFO    init data from plugin
+2021-10-06 17:23:47,549 core  108435DEBUG   use only event with id 20186784
+2021-10-06 17:23:47,571 core  108435INFO    Use Qopen command go
+2021-10-06 17:23:47,571 core  108435DEBUG   start qopen routine with parameters {"request_window": [-10, 110], "request_window_tolerance": 2, "njobs": null, "invert_events_simultaneously": false, "mean": "robust", "v0": 3400, "rho0": 2600, "R0": 1, "free_surface": 4, "optimize": {"method": "golden", "tol": 0.001}, "g0_bounds": [1e-06, 0.0001], "b_bounds": [0.001, 10], "remove_response": "full", "remove_response_options": {"water_level": 4}, "correct_for_elevation": false, "filter": {"corners": 2, "zerophase": true}, "freqs": {"width": 1, "cfreqs": [0.75, 1.06, 1.5, 2.1, 3.0, 4.2, 6.0, 8.5, 12.0, 17.0, 24.0, 33.9, 48.0, 67.9, 96.0]}, "use_picks": true, "vp": 5780, "vs": 3400, "adjust_sonset": null, "remove_noise": true, "noise_windows": [["P-10s", "P-5s"], ["P-5s", "P-1s"]], "bulk_window": ["S-0.5s", "S+3.5s"], "coda_window": ["S+3.5s", ["S+50s", "2SNR"]], "weight": [1, "bulkwindow"], "smooth": 1, "smooth_window": "flat", "cut_coda": {"smooth": 1, "ratio": 3}, "skip": {"coda_window": 5, "num_pairs": 3}, "seismic_moment_method": "robust_fit", "seismic_moment_options": {"fc": null, "n": null, "gamma": 2, "fc_lim": [0.1, 10], "num_points": 4}, "plot_energies": false, "plot_optimization": true, "plot_fits": true, "plot_eventresult": true, "plot_eventsites": true, "plot_results": true, "plot_sites": true, "plot_sds": true, "plot_mags": true, "plot_energies_options": {"fname": "01_go_20186784/plots/energies_{evid}_{f1:05.2f}Hz-{f2:05.2f}Hz.png", "xlim_lin": [-10, 110], "xlim_log": [1, 100]}, "plot_optimization_options": {"num": 7, "fname": "01_go_20186784/plots/optimization_{evid}_{f1:05.2f}Hz-{f2:05.2f}Hz.png", "figsize": [7, 7]}, "plot_fits_options": {"fname": "01_go_20186784/plots/fits_{evid}_{f1:05.2f}Hz-{f2:05.2f}Hz.png", "xlim": [0, 50]}, "plot_eventresult_options": {"fname": "01_go_20186784/plots/eventresult_{evid}.png"}, "plot_eventsites_options": {"fname": "01_go_20186784/plots/eventsites_{evid}.png"}, "plot_results_options": {"fname": "01_go_20186784/results.pdf", "llim": [1.0, 1000.0], "Qlim": [1e-05, 0.1], "mean": "robust"}, "plot_sites_options": {"fname": "01_go_20186784/sites.pdf", "mean": "robust"}, "plot_sds_options": {"fname": "01_go_20186784/sds.pdf", "annotate": true, "ylim": [10000000000, 1000000000000000]}, "plot_mags_options": {"fname": "01_go_20186784/mags.pdf"}, "cmd": "go"}
+2021-10-06 17:23:47,572 core  108435INFO    event 20186784 (no 1 of 1 | +50.248 +12.450 9.5km M2.8 | 2018-05-10T19:42:08): start processing
+2021-10-06 17:23:47,572 core  108435DEBUG   use all available cores for parallel computation
+2021-10-06 17:23:47,572 core  108435INFO    central frequencies: (0.75, 1.06, 1.5, 2.1, 3.0, 4.2, 6.0, 8.5, 12.0, 17.0, 24.0, 33.9, 48.0, 67.9, 96.0)
+2021-10-06 17:23:47,572 core  108435INFO    freq bands: (0.500, 1.000), (0.707, 1.413), (1.000, 2.000), (1.400, 2.800), (2.000, 4.000), (2.800, 5.600), (4.000, 8.000), (5.667, 11.333), (8.000, 16.000), (11.333, 22.667), (16.000, 32.000), (22.600, 45.200), (32.000, 64.000), (45.267, 90.533), (64.000, 128.000)
+2021-10-06 17:23:47,572 core  108435INFO    9 stations and 1 events -> 9 pairs
+2021-10-06 17:23:47,573 core  108435INFO    9 pairs after distance selection
+2021-10-06 17:23:47,573 core  108435DEBUG   ([('20186784', 'WB.NKC'), ('20186784', 'WB.LBC'), ('20186784', 'WB.STC'), ('20186784', 'WB.VAC'), ('20186784', 'WB.KVC'), ('20186784', 'WB.POC'), ('20186784', 'WB.SKC'), ('20186784', 'WB.KRC'), ('20186784', 'WB.ZHC')])
+2021-10-06 17:23:47,574 core  108435DEBUG   origin station distances: {('20186784', 'WB.LBC'): 10090.804836111613, ('20186784', 'WB.STC'): 10785.505112153178, ('20186784', 'WB.POC'): 12465.634249010795, ('20186784', 'WB.KRC'): 14496.147412905655, ('20186784', 'WB.VAC'): 10933.765024594873, ('20186784', 'WB.ZHC'): 24089.811757686264, ('20186784', 'WB.NKC'): 9639.4747921761955, ('20186784', 'WB.KVC'): 11457.111133924423, ('20186784', 'WB.SKC'): 14345.917430359215}
+2021-10-06 17:23:47,574 core  108435DEBUG   onsets: {'P': {('20186784', 'WB.NKC'): UTCDateTime(2018, 5, 10, 19, 42, 10, 328000), ('20186784', 'WB.LBC'): UTCDateTime(2018, 5, 10, 19, 42, 10, 400000), ('20186784', 'WB.STC'): UTCDateTime(2018, 5, 10, 19, 42, 10, 476000), ('20186784', 'WB.VAC'): UTCDateTime(2018, 5, 10, 19, 42, 10, 484000), ('20186784', 'WB.KVC'): UTCDateTime(2018, 5, 10, 19, 42, 10, 604000), ('20186784', 'WB.POC'): UTCDateTime(2018, 5, 10, 19, 42, 10, 820000), ('20186784', 'WB.SKC'): UTCDateTime(2018, 5, 10, 19, 42, 11, 72000), ('20186784', 'WB.KRC'): UTCDateTime(2018, 5, 10, 19, 42, 11, 44000), ('20186784', 'WB.ZHC'): UTCDateTime(2018, 5, 10, 19, 42, 12, 760000)}, 'S': {('20186784', 'WB.NKC'): UTCDateTime(2018, 5, 10, 19, 42, 11, 492000), ('20186784', 'WB.LBC'): UTCDateTime(2018, 5, 10, 19, 42, 11, 708000), ('20186784', 'WB.STC'): UTCDateTime(2018, 5, 10, 19, 42, 11, 712000), ('20186784', 'WB.VAC'): UTCDateTime(2018, 5, 10, 19, 42, 11, 764000), ('20186784', 'WB.KVC'): UTCDateTime(2018, 5, 10, 19, 42, 12, 80000), ('20186784', 'WB.POC'): UTCDateTime(2018, 5, 10, 19, 42, 12, 360000), ('20186784', 'WB.SKC'): UTCDateTime(2018, 5, 10, 19, 42, 12, 796000), ('20186784', 'WB.KRC'): UTCDateTime(2018, 5, 10, 19, 42, 12, 728000), ('20186784', 'WB.ZHC'): UTCDateTime(2018, 5, 10, 19, 42, 15, 608000)}}
+2021-10-06 17:23:47,574 core  108435INFO    9 pairs with determined onsets/picks
+2021-10-06 17:23:47,574 core  108435DEBUG   ([('20186784', 'WB.NKC'), ('20186784', 'WB.LBC'), ('20186784', 'WB.STC'), ('20186784', 'WB.VAC'), ('20186784', 'WB.KVC'), ('20186784', 'WB.POC'), ('20186784', 'WB.SKC'), ('20186784', 'WB.KRC'), ('20186784', 'WB.ZHC')])
+2021-10-06 17:23:47,644 core  108435INFO    succesfully fetched 9 streams for 9 stations and 1 events
+2021-10-06 17:23:47,644 core  108435DEBUG   ([('20186784', 'WB.NKC'), ('20186784', 'WB.LBC'), ('20186784', 'WB.STC'), ('20186784', 'WB.VAC'), ('20186784', 'WB.KVC'), ('20186784', 'WB.POC'), ('20186784', 'WB.SKC'), ('20186784', 'WB.KRC'), ('20186784', 'WB.ZHC')])
+2021-10-06 17:23:49,923 core  108435INFO    instrument correction (full) finished for 9 streams
+2021-10-06 17:23:49,924 core  108435DEBUG   bandpass filter (0.5Hz-1Hz, 2 corners, zerophase=True, sr=250.0Hz) has a width of 0.37Hz
+2021-10-06 17:23:49,924 core  108435DEBUG   bandpass filter (0.71Hz-1.4Hz, 2 corners, zerophase=True, sr=250.0Hz) has a width of 0.58Hz
+2021-10-06 17:23:49,925 core  108435DEBUG   bandpass filter (1Hz-2Hz, 2 corners, zerophase=True, sr=250.0Hz) has a width of 0.83Hz
+2021-10-06 17:23:49,925 core  108435DEBUG   bandpass filter (1.4Hz-2.8Hz, 2 corners, zerophase=True, sr=250.0Hz) has a width of 1.2Hz
+2021-10-06 17:23:49,925 core  108435DEBUG   bandpass filter (2Hz-4Hz, 2 corners, zerophase=True, sr=250.0Hz) has a width of 1.7Hz
+2021-10-06 17:23:49,926 core  108435DEBUG   bandpass filter (2.8Hz-5.6Hz, 2 corners, zerophase=True, sr=250.0Hz) has a width of 2.3Hz
+2021-10-06 17:23:49,926 core  108435DEBUG   bandpass filter (4Hz-8Hz, 2 corners, zerophase=True, sr=250.0Hz) has a width of 3.3Hz
+2021-10-06 17:23:49,927 core  108435DEBUG   bandpass filter (5.7Hz-11Hz, 2 corners, zerophase=True, sr=250.0Hz) has a width of 4.7Hz
+2021-10-06 17:23:49,927 core  108435DEBUG   bandpass filter (8Hz-16Hz, 2 corners, zerophase=True, sr=250.0Hz) has a width of 6.7Hz
+2021-10-06 17:23:49,927 core  108435DEBUG   bandpass filter (11Hz-23Hz, 2 corners, zerophase=True, sr=250.0Hz) has a width of 9.4Hz
+2021-10-06 17:23:49,928 core  108435DEBUG   bandpass filter (16Hz-32Hz, 2 corners, zerophase=True, sr=250.0Hz) has a width of 13Hz
+2021-10-06 17:23:49,928 core  108435DEBUG   bandpass filter (23Hz-45Hz, 2 corners, zerophase=True, sr=250.0Hz) has a width of 19Hz
+2021-10-06 17:23:49,929 core  108435DEBUG   bandpass filter (32Hz-64Hz, 2 corners, zerophase=True, sr=250.0Hz) has a width of 27Hz
+2021-10-06 17:23:49,929 core  108435DEBUG   bandpass filter (45Hz-91Hz, 2 corners, zerophase=True, sr=250.0Hz) has a width of 38Hz
+2021-10-06 17:23:49,929 core  108435DEBUG   highpass filter (64Hz, 2 corners, zerophase=True, sr=250.0Hz) has a width of 52Hz
+2021-10-06 17:23:50,257 core  108747DEBUG   freq band (0.50Hz, 1.00Hz): start optimization
+2021-10-06 17:23:50,406 core  108748DEBUG   freq band (0.71Hz, 1.41Hz): start optimization
+2021-10-06 17:23:50,449 core  108750DEBUG   freq band (1.00Hz, 2.00Hz): start optimization
+2021-10-06 17:23:50,683 core  108752DEBUG   freq band (1.40Hz, 2.80Hz): start optimization
+2021-10-06 17:23:50,890 core  108754DEBUG   freq band (2.00Hz, 4.00Hz): start optimization
+2021-10-06 17:23:51,016 core  108756DEBUG   freq band (2.80Hz, 5.60Hz): start optimization
+2021-10-06 17:23:51,344 core  108758DEBUG   freq band (4.00Hz, 8.00Hz): start optimization
+2021-10-06 17:23:51,501 core  108748DEBUG   ('20186784', 'WB.NKC'): noise level at 5.0e-13
+2021-10-06 17:23:51,524 core  108748DEBUG   ('20186784', 'WB.LBC'): noise level at 7.3e-13
+2021-10-06 17:23:51,547 core  108748DEBUG   ('20186784', 'WB.STC'): noise level at 4.6e-13
+2021-10-06 17:23:51,585 core  108748DEBUG   ('20186784', 'WB.VAC'): noise level at 3.7e-13
+2021-10-06 17:23:51,608 core  108748DEBUG   ('20186784', 'WB.KVC'): noise level at 3.9e-13
+2021-10-06 17:23:51,630 core  108748DEBUG   ('20186784', 'WB.POC'): noise level at 1.5e-12
+2021-10-06 17:23:51,652 core  108748DEBUG   ('20186784', 'WB.SKC'): noise level at 1.5e-13
+2021-10-06 17:23:51,695 core  108748DEBUG   ('20186784', 'WB.KRC'): noise level at 3.6e-13
+2021-10-06 17:23:51,735 core  108759DEBUG   freq band (5.67Hz, 11.33Hz): start optimization
+2021-10-06 17:23:51,739 core  108748DEBUG   ('20186784', 'WB.ZHC'): noise level at 2.4e-13
+2021-10-06 17:23:51,780 core  108748DEBUG   ('20186784', 'WB.NKC'): bulk window (2.45s, 6.45s) coda window (6.45s, 46.91s)
+2021-10-06 17:23:51,803 core  108748DEBUG   ('20186784', 'WB.NKC'): cut coda at local minimum detected at 12.32s.
+2021-10-06 17:23:51,867 core  108748DEBUG   ('20186784', 'WB.LBC'): bulk window (2.67s, 6.67s) coda window (6.67s, 33.20s)
+2021-10-06 17:23:51,902 core  108748DEBUG   ('20186784', 'WB.LBC'): cut coda at local minimum detected at 7.20s.
+2021-10-06 17:23:51,903 core  108748DEBUG   ('20186784', 'WB.LBC'): coda window of length 0.5s shorter than 5.0 -> skip pair
+2021-10-06 17:23:51,933 core  108748DEBUG   ('20186784', 'WB.STC'): bulk window (2.67s, 6.67s) coda window (6.67s, 27.06s)
+2021-10-06 17:23:51,943 core  108748DEBUG   ('20186784', 'WB.STC'): cut coda at local minimum detected at 7.24s.
+2021-10-06 17:23:51,943 core  108748DEBUG   ('20186784', 'WB.STC'): coda window of length 0.6s shorter than 5.0 -> skip pair
+2021-10-06 17:23:51,965 core  108748DEBUG   ('20186784', 'WB.VAC'): bulk window (2.72s, 6.72s) coda window (6.72s, 34.81s)
+2021-10-06 17:23:52,009 core  108748DEBUG   ('20186784', 'WB.KVC'): bulk window (3.04s, 7.04s) coda window (7.04s, 36.77s)
+2021-10-06 17:23:52,017 core  108748DEBUG   ('20186784', 'WB.KVC'): cut coda at local minimum detected at 31.81s.
+2021-10-06 17:23:52,049 core  108748DEBUG   ('20186784', 'WB.POC'): bulk window (3.32s, 7.32s) coda window (7.32s, 29.64s)
+2021-10-06 17:23:52,094 core  108748DEBUG   ('20186784', 'WB.SKC'): bulk window (3.76s, 7.76s) coda window (7.76s, 52.20s)
+2021-10-06 17:23:52,107 core  108748DEBUG   ('20186784', 'WB.SKC'): cut coda at local minimum detected at 20.43s.
+2021-10-06 17:23:52,185 core  108748DEBUG   ('20186784', 'WB.KRC'): bulk window (3.69s, 7.69s) coda window (7.69s, 29.21s)
+2021-10-06 17:23:52,254 core  108748DEBUG   ('20186784', 'WB.ZHC'): bulk window (6.57s, 10.57s) coda window (10.57s, 44.37s)
+2021-10-06 17:23:52,301 core  108748DEBUG   ('20186784', 'WB.ZHC'): cut coda at local minimum detected at 15.10s.
+2021-10-06 17:23:52,302 core  108748DEBUG   ('20186784', 'WB.ZHC'): coda window of length 4.5s shorter than 5.0 -> skip pair
+2021-10-06 17:23:52,377 core  108752DEBUG   ('20186784', 'WB.NKC'): noise level at 1.5e-12
+2021-10-06 17:23:52,418 core  108752DEBUG   ('20186784', 'WB.LBC'): noise level at 7.6e-13
+2021-10-06 17:23:52,445 core  108761DEBUG   freq band (8.00Hz, 16.00Hz): start optimization
+2021-10-06 17:23:52,454 core  108752DEBUG   ('20186784', 'WB.STC'): noise level at 9.7e-13
+2021-10-06 17:23:52,475 core  108752DEBUG   ('20186784', 'WB.VAC'): noise level at 6.0e-13
+2021-10-06 17:23:52,499 core  108752DEBUG   ('20186784', 'WB.KVC'): noise level at 3.2e-13
+2021-10-06 17:23:52,531 core  108752DEBUG   ('20186784', 'WB.POC'): noise level at 2.8e-13
+2021-10-06 17:23:52,623 core  108752DEBUG   ('20186784', 'WB.SKC'): noise level at 3.1e-13
+2021-10-06 17:23:52,823 core  108752DEBUG   ('20186784', 'WB.KRC'): noise level at 2.1e-12
+2021-10-06 17:23:52,898 core  108763DEBUG   freq band (11.33Hz, 22.67Hz): start optimization
+2021-10-06 17:23:52,918 core  108752DEBUG   ('20186784', 'WB.ZHC'): noise level at 2.1e-13
+2021-10-06 17:23:52,976 core  108752DEBUG   ('20186784', 'WB.NKC'): bulk window (2.45s, 6.45s) coda window (6.45s, 42.99s)
+2021-10-06 17:23:52,998 core  108752DEBUG   ('20186784', 'WB.NKC'): cut coda at local minimum detected at 34.64s.
+2021-10-06 17:23:53,173 core  108752DEBUG   ('20186784', 'WB.LBC'): bulk window (2.67s, 6.67s) coda window (6.67s, 43.20s)
+2021-10-06 17:23:53,222 core  108752DEBUG   ('20186784', 'WB.LBC'): cut coda at local minimum detected at 6.87s.
+2021-10-06 17:23:53,223 core  108752DEBUG   ('20186784', 'WB.LBC'): coda window of length 0.2s shorter than 5.0 -> skip pair
+2021-10-06 17:23:53,300 core  108747DEBUG   ('20186784', 'WB.NKC'): noise level at 5.1e-13
+2021-10-06 17:23:53,320 core  108747DEBUG   ('20186784', 'WB.LBC'): noise level at 4.2e-13
+2021-10-06 17:23:53,354 core  108747DEBUG   ('20186784', 'WB.STC'): noise level at 3.6e-13
+2021-10-06 17:23:53,355 core  108752DEBUG   ('20186784', 'WB.STC'): bulk window (2.67s, 6.67s) coda window (6.67s, 26.85s)
+2021-10-06 17:23:53,369 core  108765DEBUG   freq band (16.00Hz, 32.00Hz): start optimization
+2021-10-06 17:23:53,436 core  108747DEBUG   ('20186784', 'WB.VAC'): noise level at 4.9e-13
+2021-10-06 17:23:53,485 core  108747DEBUG   ('20186784', 'WB.KVC'): noise level at 1.8e-13
+2021-10-06 17:23:53,598 core  108767DEBUG   freq band (22.60Hz, 45.20Hz): start optimization
+2021-10-06 17:23:53,663 core  108752DEBUG   ('20186784', 'WB.VAC'): bulk window (2.72s, 6.72s) coda window (6.72s, 52.69s)
+2021-10-06 17:23:53,675 core  108747DEBUG   ('20186784', 'WB.POC'): noise level at 5.0e-13
+2021-10-06 17:23:53,713 core  108752DEBUG   ('20186784', 'WB.VAC'): cut coda at local minimum detected at 29.88s.
+2021-10-06 17:23:53,735 core  108750DEBUG   ('20186784', 'WB.NKC'): noise level at 7.0e-13
+2021-10-06 17:23:53,769 core  108747DEBUG   ('20186784', 'WB.SKC'): noise level at 1.8e-13
+2021-10-06 17:23:53,781 core  108750DEBUG   ('20186784', 'WB.LBC'): noise level at 9.8e-13
+2021-10-06 17:23:53,781 core  108754DEBUG   ('20186784', 'WB.NKC'): noise level at 1.9e-12
+2021-10-06 17:23:53,801 core  108754DEBUG   ('20186784', 'WB.LBC'): noise level at 5.7e-13
+2021-10-06 17:23:53,808 core  108752DEBUG   ('20186784', 'WB.KVC'): bulk window (3.04s, 7.04s) coda window (7.04s, 41.71s)
+2021-10-06 17:23:53,821 core  108750DEBUG   ('20186784', 'WB.STC'): noise level at 9.9e-13
+2021-10-06 17:23:53,821 core  108754DEBUG   ('20186784', 'WB.STC'): noise level at 4.8e-13
+2021-10-06 17:23:53,832 core  108752DEBUG   ('20186784', 'WB.KVC'): cut coda at local minimum detected at 22.32s.
+2021-10-06 17:23:53,842 core  108754DEBUG   ('20186784', 'WB.VAC'): noise level at 6.2e-13
+2021-10-06 17:23:53,852 core  108747DEBUG   ('20186784', 'WB.KRC'): noise level at 2.8e-13
+2021-10-06 17:23:53,860 core  108750DEBUG   ('20186784', 'WB.VAC'): noise level at 7.7e-13
+2021-10-06 17:23:53,864 core  108754DEBUG   ('20186784', 'WB.KVC'): noise level at 3.1e-13
+2021-10-06 17:23:53,870 core  108769DEBUG   freq band (32.00Hz, 64.00Hz): start optimization
+2021-10-06 17:23:53,886 core  108754DEBUG   ('20186784', 'WB.POC'): noise level at 4.3e-13
+2021-10-06 17:23:53,901 core  108750DEBUG   ('20186784', 'WB.KVC'): noise level at 3.4e-13
+2021-10-06 17:23:53,903 core  108752DEBUG   ('20186784', 'WB.POC'): bulk window (3.32s, 7.32s) coda window (7.32s, 53.82s)
+2021-10-06 17:23:53,909 core  108754DEBUG   ('20186784', 'WB.SKC'): noise level at 2.4e-13
+2021-10-06 17:23:53,921 core  108771DEBUG   freq band (45.27Hz, 90.53Hz): start optimization
+2021-10-06 17:23:53,926 core  108747DEBUG   ('20186784', 'WB.ZHC'): noise level at 2.4e-13
+2021-10-06 17:23:53,932 core  108754DEBUG   ('20186784', 'WB.KRC'): noise level at 8.1e-13
+2021-10-06 17:23:53,933 core  108752DEBUG   ('20186784', 'WB.POC'): cut coda at local minimum detected at 32.74s.
+2021-10-06 17:23:53,950 core  108750DEBUG   ('20186784', 'WB.POC'): noise level at 6.2e-13
+2021-10-06 17:23:53,998 core  108754DEBUG   ('20186784', 'WB.ZHC'): noise level at 1.5e-13
+2021-10-06 17:23:54,013 core  108756DEBUG   ('20186784', 'WB.NKC'): noise level at 2.2e-12
+2021-10-06 17:23:54,014 core  108747DEBUG   ('20186784', 'WB.NKC'): bulk window (2.45s, 6.45s) coda window (6.45s, 46.79s)
+2021-10-06 17:23:54,017 core  108750DEBUG   ('20186784', 'WB.SKC'): noise level at 3.3e-13
+2021-10-06 17:23:54,060 core  108752DEBUG   ('20186784', 'WB.SKC'): bulk window (3.76s, 7.76s) coda window (7.76s, 40.20s)
+2021-10-06 17:23:54,077 core  108756DEBUG   ('20186784', 'WB.LBC'): noise level at 8.2e-13
+2021-10-06 17:23:54,104 core  108754DEBUG   ('20186784', 'WB.NKC'): bulk window (2.45s, 6.45s) coda window (6.45s, 49.89s)
+2021-10-06 17:23:54,105 core  108747DEBUG   ('20186784', 'WB.NKC'): cut coda at local minimum detected at 6.16s.
+2021-10-06 17:23:54,105 core  108747DEBUG   ('20186784', 'WB.NKC'): coda window of length 0.0s shorter than 5.0 -> skip pair
+2021-10-06 17:23:54,106 core  108752DEBUG   ('20186784', 'WB.SKC'): cut coda at local minimum detected at 32.16s.
+2021-10-06 17:23:54,109 core  108750DEBUG   ('20186784', 'WB.KRC'): noise level at 1.1e-12
+2021-10-06 17:23:54,118 core  108754DEBUG   ('20186784', 'WB.NKC'): cut coda at local minimum detected at 17.30s.
+2021-10-06 17:23:54,131 core  108747DEBUG   ('20186784', 'WB.LBC'): bulk window (2.67s, 6.67s) coda window (6.67s, 33.85s)
+2021-10-06 17:23:54,135 core  108772DEBUG   freq band (64.00Hz, 128.00Hz): start optimization
+2021-10-06 17:23:54,144 core  108747DEBUG   ('20186784', 'WB.LBC'): cut coda at local minimum detected at 12.35s.
+2021-10-06 17:23:54,150 core  108750DEBUG   ('20186784', 'WB.ZHC'): noise level at 1.6e-13
+2021-10-06 17:23:54,172 core  108752DEBUG   ('20186784', 'WB.KRC'): bulk window (3.69s, 7.69s) coda window (7.69s, 33.76s)
+2021-10-06 17:23:54,187 core  108754DEBUG   ('20186784', 'WB.LBC'): bulk window (2.67s, 6.67s) coda window (6.67s, 53.17s)
+2021-10-06 17:23:54,254 core  108747DEBUG   ('20186784', 'WB.STC'): bulk window (2.67s, 6.67s) coda window (6.67s, 35.02s)
+2021-10-06 17:23:54,286 core  108750DEBUG   ('20186784', 'WB.NKC'): bulk window (2.45s, 6.45s) coda window (6.45s, 41.36s)
+2021-10-06 17:23:54,287 core  108747DEBUG   ('20186784', 'WB.STC'): cut coda at local minimum detected at 18.37s.
+2021-10-06 17:23:54,335 core  108750DEBUG   ('20186784', 'WB.NKC'): cut coda at local minimum detected at 14.60s.
+2021-10-06 17:23:54,355 core  108752DEBUG   ('20186784', 'WB.ZHC'): bulk window (6.57s, 10.57s) coda window (10.57s, 39.59s)
+2021-10-06 17:23:54,375 core  108747DEBUG   ('20186784', 'WB.VAC'): bulk window (2.72s, 6.72s) coda window (6.72s, 32.40s)
+2021-10-06 17:23:54,387 core  108747DEBUG   ('20186784', 'WB.VAC'): cut coda at local minimum detected at 15.42s.
+2021-10-06 17:23:54,387 core  108754DEBUG   ('20186784', 'WB.STC'): bulk window (2.67s, 6.67s) coda window (6.67s, 53.17s)
+2021-10-06 17:23:54,395 core  108752DEBUG   ('20186784', 'WB.ZHC'): cut coda at local minimum detected at 23.67s.
+2021-10-06 17:23:54,410 core  108754DEBUG   ('20186784', 'WB.STC'): cut coda at local minimum detected at 41.66s.
+2021-10-06 17:23:54,449 core  108750DEBUG   ('20186784', 'WB.LBC'): bulk window (2.67s, 6.67s) coda window (6.67s, 27.47s)
+2021-10-06 17:23:54,457 core  108756DEBUG   ('20186784', 'WB.STC'): noise level at 4.0e-13
+2021-10-06 17:23:54,473 core  108750DEBUG   ('20186784', 'WB.LBC'): cut coda at local minimum detected at 6.98s.
+2021-10-06 17:23:54,474 core  108750DEBUG   ('20186784', 'WB.LBC'): coda window of length 0.3s shorter than 5.0 -> skip pair
+2021-10-06 17:23:54,484 core  108756DEBUG   ('20186784', 'WB.VAC'): noise level at 9.3e-13
+2021-10-06 17:23:54,503 core  108747DEBUG   ('20186784', 'WB.KVC'): bulk window (3.04s, 7.04s) coda window (7.04s, 46.10s)
+2021-10-06 17:23:54,511 core  108756DEBUG   ('20186784', 'WB.KVC'): noise level at 5.9e-13
+2021-10-06 17:23:54,526 core  108750DEBUG   ('20186784', 'WB.STC'): bulk window (2.67s, 6.67s) coda window (6.67s, 26.68s)
+2021-10-06 17:23:54,537 core  108756DEBUG   ('20186784', 'WB.POC'): noise level at 5.7e-13
+2021-10-06 17:23:54,539 core  108747DEBUG   ('20186784', 'WB.KVC'): cut coda at local minimum detected at 20.91s.
+2021-10-06 17:23:54,564 core  108756DEBUG   ('20186784', 'WB.SKC'): noise level at 2.4e-13
+2021-10-06 17:23:54,590 core  108756DEBUG   ('20186784', 'WB.KRC'): noise level at 1.3e-12
+2021-10-06 17:23:54,616 core  108756DEBUG   ('20186784', 'WB.ZHC'): noise level at 1.8e-13
+2021-10-06 17:23:54,625 core  108747DEBUG   ('20186784', 'WB.POC'): bulk window (3.32s, 7.32s) coda window (7.32s, 30.07s)
+2021-10-06 17:23:54,636 core  108754DEBUG   ('20186784', 'WB.VAC'): bulk window (2.72s, 6.72s) coda window (6.72s, 53.22s)
+2021-10-06 17:23:54,645 core  108756DEBUG   ('20186784', 'WB.NKC'): bulk window (2.45s, 6.45s) coda window (6.45s, 52.95s)
+2021-10-06 17:23:54,677 core  108754DEBUG   ('20186784', 'WB.VAC'): cut coda at local minimum detected at 37.57s.
+2021-10-06 17:23:54,683 core  108750DEBUG   ('20186784', 'WB.VAC'): bulk window (2.72s, 6.72s) coda window (6.72s, 32.60s)
+2021-10-06 17:23:54,687 core  108747DEBUG   ('20186784', 'WB.SKC'): bulk window (3.76s, 7.76s) coda window (7.76s, 40.52s)
+2021-10-06 17:23:54,700 core  108747DEBUG   ('20186784', 'WB.SKC'): cut coda at local minimum detected at 20.06s.
+2021-10-06 17:23:54,711 core  108756DEBUG   ('20186784', 'WB.LBC'): bulk window (2.67s, 6.67s) coda window (6.67s, 53.17s)
+2021-10-06 17:23:54,755 core  108754DEBUG   ('20186784', 'WB.KVC'): bulk window (3.04s, 7.04s) coda window (7.04s, 53.54s)
+2021-10-06 17:23:54,768 core  108754DEBUG   ('20186784', 'WB.KVC'): cut coda at local minimum detected at 41.72s.
+2021-10-06 17:23:54,810 core  108747DEBUG   ('20186784', 'WB.KRC'): bulk window (3.69s, 7.69s) coda window (7.69s, 28.36s)
+2021-10-06 17:23:54,819 core  108750DEBUG   ('20186784', 'WB.KVC'): bulk window (3.04s, 7.04s) coda window (7.04s, 31.84s)
+2021-10-06 17:23:54,850 core  108747DEBUG   ('20186784', 'WB.KRC'): cut coda at local minimum detected at 11.96s.
+2021-10-06 17:23:54,850 core  108747DEBUG   ('20186784', 'WB.KRC'): coda window of length 4.3s shorter than 5.0 -> skip pair
+2021-10-06 17:23:54,855 core  108756DEBUG   ('20186784', 'WB.STC'): bulk window (2.67s, 6.67s) coda window (6.67s, 53.17s)
+2021-10-06 17:23:54,870 core  108754DEBUG   ('20186784', 'WB.POC'): bulk window (3.32s, 7.32s) coda window (7.32s, 53.82s)
+2021-10-06 17:23:54,898 core  108754DEBUG   ('20186784', 'WB.POC'): cut coda at local minimum detected at 12.84s.
+2021-10-06 17:23:54,904 core  108747DEBUG   ('20186784', 'WB.ZHC'): bulk window (6.57s, 10.57s) coda window (10.57s, 44.34s)
+2021-10-06 17:23:54,927 core  108756DEBUG   ('20186784', 'WB.STC'): cut coda at local minimum detected at 12.54s.
+2021-10-06 17:23:54,951 core  108750DEBUG   ('20186784', 'WB.POC'): bulk window (3.32s, 7.32s) coda window (7.32s, 40.75s)
+2021-10-06 17:23:55,017 core  108754DEBUG   ('20186784', 'WB.SKC'): bulk window (3.76s, 7.76s) coda window (7.76s, 44.38s)
+2021-10-06 17:23:55,029 core  108750DEBUG   ('20186784', 'WB.SKC'): bulk window (3.76s, 7.76s) coda window (7.76s, 37.62s)
+2021-10-06 17:23:55,044 core  108750DEBUG   ('20186784', 'WB.SKC'): cut coda at local minimum detected at 28.76s.
+2021-10-06 17:23:55,132 core  108754DEBUG   ('20186784', 'WB.SKC'): cut coda at local minimum detected at 11.60s.
+2021-10-06 17:23:55,132 core  108754DEBUG   ('20186784', 'WB.SKC'): coda window of length 3.8s shorter than 5.0 -> skip pair
+2021-10-06 17:23:55,193 core  108756DEBUG   ('20186784', 'WB.VAC'): bulk window (2.72s, 6.72s) coda window (6.72s, 53.22s)
+2021-10-06 17:23:55,245 core  108750DEBUG   ('20186784', 'WB.KRC'): bulk window (3.69s, 7.69s) coda window (7.69s, 32.53s)
+2021-10-06 17:23:55,255 core  108756DEBUG   ('20186784', 'WB.VAC'): cut coda at local minimum detected at 46.26s.
+2021-10-06 17:23:55,306 core  108756DEBUG   ('20186784', 'WB.KVC'): bulk window (3.04s, 7.04s) coda window (7.04s, 53.54s)
+2021-10-06 17:23:55,313 core  108754DEBUG   ('20186784', 'WB.KRC'): bulk window (3.69s, 7.69s) coda window (7.69s, 54.19s)
+2021-10-06 17:23:55,319 core  108756DEBUG   ('20186784', 'WB.KVC'): cut coda at local minimum detected at 12.23s.
+2021-10-06 17:23:55,384 core  108756DEBUG   ('20186784', 'WB.POC'): bulk window (3.32s, 7.32s) coda window (7.32s, 53.82s)
+2021-10-06 17:23:55,417 core  108754DEBUG   ('20186784', 'WB.KRC'): cut coda at local minimum detected at 19.01s.
+2021-10-06 17:23:55,438 core  108756DEBUG   ('20186784', 'WB.POC'): cut coda at local minimum detected at 12.97s.
+2021-10-06 17:23:55,560 core  108750DEBUG   ('20186784', 'WB.ZHC'): bulk window (6.57s, 10.57s) coda window (10.57s, 36.82s)
+2021-10-06 17:23:55,579 core  108754DEBUG   ('20186784', 'WB.ZHC'): bulk window (6.57s, 10.57s) coda window (10.57s, 57.07s)
+2021-10-06 17:23:55,633 core  108750DEBUG   ('20186784', 'WB.ZHC'): cut coda at local minimum detected at 32.78s.
+2021-10-06 17:23:55,677 core  108756DEBUG   ('20186784', 'WB.SKC'): bulk window (3.76s, 7.76s) coda window (7.76s, 54.26s)
+2021-10-06 17:23:55,828 core  108754DEBUG   ('20186784', 'WB.ZHC'): cut coda at local minimum detected at 28.60s.
+2021-10-06 17:23:55,899 core  108756DEBUG   ('20186784', 'WB.SKC'): cut coda at local minimum detected at 28.48s.
+2021-10-06 17:23:56,064 core  108756DEBUG   ('20186784', 'WB.KRC'): bulk window (3.69s, 7.69s) coda window (7.69s, 54.19s)
+2021-10-06 17:23:56,584 core  108756DEBUG   ('20186784', 'WB.ZHC'): bulk window (6.57s, 10.57s) coda window (10.57s, 57.07s)
+2021-10-06 17:23:56,639 core  108758DEBUG   ('20186784', 'WB.NKC'): noise level at 3.0e-12
+2021-10-06 17:23:56,663 core  108758DEBUG   ('20186784', 'WB.LBC'): noise level at 1.2e-12
+2021-10-06 17:23:56,696 core  108758DEBUG   ('20186784', 'WB.STC'): noise level at 7.7e-13
+2021-10-06 17:23:57,036 core  108758DEBUG   ('20186784', 'WB.VAC'): noise level at 2.6e-12
+2021-10-06 17:23:57,161 core  108758DEBUG   ('20186784', 'WB.KVC'): noise level at 7.2e-13
+2021-10-06 17:23:57,274 core  108758DEBUG   ('20186784', 'WB.POC'): noise level at 8.1e-13
+2021-10-06 17:23:57,318 core  108759DEBUG   ('20186784', 'WB.NKC'): noise level at 3.4e-12
+2021-10-06 17:23:57,389 core  108759DEBUG   ('20186784', 'WB.LBC'): noise level at 1.3e-12
+2021-10-06 17:23:57,405 core  108758DEBUG   ('20186784', 'WB.SKC'): noise level at 4.0e-13
+2021-10-06 17:23:57,497 core  108759DEBUG   ('20186784', 'WB.STC'): noise level at 1.5e-12
+2021-10-06 17:23:57,557 core  108771DEBUG   ('20186784', 'WB.NKC'): noise level at 3.8e-13
+2021-10-06 17:23:57,568 core  108759DEBUG   ('20186784', 'WB.VAC'): noise level at 3.1e-12
+2021-10-06 17:23:57,590 core  108771DEBUG   ('20186784', 'WB.LBC'): noise level at 1.1e-13
+2021-10-06 17:23:57,620 core  108771DEBUG   ('20186784', 'WB.STC'): noise level at 1.2e-12
+2021-10-06 17:23:57,641 core  108771DEBUG   ('20186784', 'WB.VAC'): noise level at 3.7e-13
+2021-10-06 17:23:57,641 core  108758DEBUG   ('20186784', 'WB.KRC'): noise level at 3.7e-12
+2021-10-06 17:23:57,649 core  108759DEBUG   ('20186784', 'WB.KVC'): noise level at 7.9e-13
+2021-10-06 17:23:57,679 core  108759DEBUG   ('20186784', 'WB.POC'): noise level at 1.3e-12
+2021-10-06 17:23:57,693 core  108758DEBUG   ('20186784', 'WB.ZHC'): noise level at 2.9e-13
+2021-10-06 17:23:57,722 core  108759DEBUG   ('20186784', 'WB.SKC'): noise level at 8.6e-13
+2021-10-06 17:23:57,747 core  108759DEBUG   ('20186784', 'WB.KRC'): noise level at 4.3e-12
+2021-10-06 17:23:57,754 core  108771DEBUG   ('20186784', 'WB.KVC'): noise level at 1.4e-12
+2021-10-06 17:23:57,768 core  108759DEBUG   ('20186784', 'WB.ZHC'): noise level at 5.4e-13
+2021-10-06 17:23:57,834 core  108758DEBUG   ('20186784', 'WB.NKC'): bulk window (2.45s, 6.45s) coda window (6.45s, 42.25s)
+2021-10-06 17:23:57,842 core  108759DEBUG   ('20186784', 'WB.NKC'): bulk window (2.45s, 6.45s) coda window (6.45s, 50.64s)
+2021-10-06 17:23:57,974 core  108771DEBUG   ('20186784', 'WB.POC'): noise level at 2.8e-13
+2021-10-06 17:23:58,014 core  108771DEBUG   ('20186784', 'WB.SKC'): noise level at 4.2e-13
+2021-10-06 17:23:58,036 core  108771DEBUG   ('20186784', 'WB.KRC'): noise level at 7.9e-13
+2021-10-06 17:23:58,036 core  108758DEBUG   ('20186784', 'WB.LBC'): bulk window (2.67s, 6.67s) coda window (6.67s, 53.17s)
+2021-10-06 17:23:58,077 core  108771DEBUG   ('20186784', 'WB.ZHC'): noise level at 5.9e-13
+2021-10-06 17:23:58,105 core  108758DEBUG   ('20186784', 'WB.LBC'): cut coda at local minimum detected at 41.61s.
+2021-10-06 17:23:58,113 core  108759DEBUG   ('20186784', 'WB.LBC'): bulk window (2.67s, 6.67s) coda window (6.67s, 53.17s)
+2021-10-06 17:23:58,149 core  108759DEBUG   ('20186784', 'WB.LBC'): cut coda at local minimum detected at 41.27s.
+2021-10-06 17:23:58,190 core  108761DEBUG   ('20186784', 'WB.NKC'): noise level at 2.6e-12
+2021-10-06 17:23:58,209 core  108758DEBUG   ('20186784', 'WB.STC'): bulk window (2.67s, 6.67s) coda window (6.67s, 53.17s)
+2021-10-06 17:23:58,213 core  108761DEBUG   ('20186784', 'WB.LBC'): noise level at 1.3e-12
+2021-10-06 17:23:58,222 core  108758DEBUG   ('20186784', 'WB.STC'): cut coda at local minimum detected at 12.50s.
+2021-10-06 17:23:58,227 core  108759DEBUG   ('20186784', 'WB.STC'): bulk window (2.67s, 6.67s) coda window (6.67s, 48.56s)
+2021-10-06 17:23:58,235 core  108761DEBUG   ('20186784', 'WB.STC'): noise level at 2.1e-12
+2021-10-06 17:23:58,257 core  108761DEBUG   ('20186784', 'WB.VAC'): noise level at 4.0e-12
+2021-10-06 17:23:58,258 core  108758DEBUG   ('20186784', 'WB.VAC'): bulk window (2.72s, 6.72s) coda window (6.72s, 45.94s)
+2021-10-06 17:23:58,266 core  108759DEBUG   ('20186784', 'WB.STC'): cut coda at local minimum detected at 12.35s.
+2021-10-06 17:23:58,274 core  108758DEBUG   ('20186784', 'WB.VAC'): cut coda at local minimum detected at 12.34s.
+2021-10-06 17:23:58,297 core  108771DEBUG   ('20186784', 'WB.NKC'): bulk window (2.45s, 6.45s) coda window (6.45s, 23.24s)
+2021-10-06 17:23:58,312 core  108761DEBUG   ('20186784', 'WB.KVC'): noise level at 1.2e-12
+2021-10-06 17:23:58,335 core  108761DEBUG   ('20186784', 'WB.POC'): noise level at 1.9e-12
+2021-10-06 17:23:58,455 core  108761DEBUG   ('20186784', 'WB.SKC'): noise level at 1.0e-12
+2021-10-06 17:23:58,484 core  108759DEBUG   ('20186784', 'WB.VAC'): bulk window (2.72s, 6.72s) coda window (6.72s, 41.32s)
+2021-10-06 17:23:58,499 core  108758DEBUG   ('20186784', 'WB.KVC'): bulk window (3.04s, 7.04s) coda window (7.04s, 53.54s)
+2021-10-06 17:23:58,562 core  108758DEBUG   ('20186784', 'WB.KVC'): cut coda at local minimum detected at 18.54s.
+2021-10-06 17:23:58,574 core  108759DEBUG   ('20186784', 'WB.VAC'): cut coda at local minimum detected at 12.36s.
+2021-10-06 17:23:58,649 core  108761DEBUG   ('20186784', 'WB.KRC'): noise level at 4.8e-12
+2021-10-06 17:23:58,707 core  108761DEBUG   ('20186784', 'WB.ZHC'): noise level at 8.7e-13
+2021-10-06 17:23:58,726 core  108769DEBUG   ('20186784', 'WB.NKC'): noise level at 7.3e-13
+2021-10-06 17:23:58,753 core  108769DEBUG   ('20186784', 'WB.LBC'): noise level at 2.2e-13
+2021-10-06 17:23:58,777 core  108763DEBUG   ('20186784', 'WB.NKC'): noise level at 2.8e-12
+2021-10-06 17:23:58,799 core  108769DEBUG   ('20186784', 'WB.STC'): noise level at 1.3e-12
+2021-10-06 17:23:58,782 core  108771DEBUG   ('20186784', 'WB.LBC'): bulk window (2.67s, 6.67s) coda window (6.67s, 23.74s)
+2021-10-06 17:23:58,806 core  108759DEBUG   ('20186784', 'WB.KVC'): bulk window (3.04s, 7.04s) coda window (7.04s, 53.54s)
+2021-10-06 17:23:58,825 core  108769DEBUG   ('20186784', 'WB.VAC'): noise level at 8.3e-13
+2021-10-06 17:23:58,831 core  108758DEBUG   ('20186784', 'WB.POC'): bulk window (3.32s, 7.32s) coda window (7.32s, 53.82s)
+2021-10-06 17:23:58,841 core  108765DEBUG   ('20186784', 'WB.NKC'): noise level at 2.1e-12
+2021-10-06 17:23:58,847 core  108769DEBUG   ('20186784', 'WB.KVC'): noise level at 1.6e-12
+2021-10-06 17:23:58,869 core  108765DEBUG   ('20186784', 'WB.LBC'): noise level at 1.3e-12
+2021-10-06 17:23:58,887 core  108759DEBUG   ('20186784', 'WB.KVC'): cut coda at local minimum detected at 34.30s.
+2021-10-06 17:23:58,895 core  108761DEBUG   ('20186784', 'WB.NKC'): bulk window (2.45s, 6.45s) coda window (6.45s, 43.26s)
+2021-10-06 17:23:58,895 core  108765DEBUG   ('20186784', 'WB.STC'): noise level at 2.1e-12
+2021-10-06 17:23:58,903 core  108763DEBUG   ('20186784', 'WB.LBC'): noise level at 1.3e-12
+2021-10-06 17:23:58,922 core  108765DEBUG   ('20186784', 'WB.VAC'): noise level at 1.5e-12
+2021-10-06 17:23:58,949 core  108765DEBUG   ('20186784', 'WB.KVC'): noise level at 1.5e-12
+2021-10-06 17:23:58,975 core  108765DEBUG   ('20186784', 'WB.POC'): noise level at 1.9e-12
+2021-10-06 17:23:59,002 core  108765DEBUG   ('20186784', 'WB.SKC'): noise level at 1.1e-12
+2021-10-06 17:23:59,014 core  108769DEBUG   ('20186784', 'WB.POC'): noise level at 1.1e-12
+2021-10-06 17:23:59,028 core  108765DEBUG   ('20186784', 'WB.KRC'): noise level at 5.1e-12
+2021-10-06 17:23:59,055 core  108765DEBUG   ('20186784', 'WB.ZHC'): noise level at 1.8e-12
+2021-10-06 17:23:59,096 core  108763DEBUG   ('20186784', 'WB.STC'): noise level at 1.7e-12
+2021-10-06 17:23:59,101 core  108759DEBUG   ('20186784', 'WB.POC'): bulk window (3.32s, 7.32s) coda window (7.32s, 53.82s)
+2021-10-06 17:23:59,102 core  108765DEBUG   ('20186784', 'WB.NKC'): bulk window (2.45s, 6.45s) coda window (6.45s, 27.43s)
+2021-10-06 17:23:59,120 core  108765DEBUG   ('20186784', 'WB.NKC'): cut coda at local minimum detected at 10.22s.
+2021-10-06 17:23:59,120 core  108765DEBUG   ('20186784', 'WB.NKC'): coda window of length 3.8s shorter than 5.0 -> skip pair
+2021-10-06 17:23:59,151 core  108765DEBUG   ('20186784', 'WB.LBC'): bulk window (2.67s, 6.67s) coda window (6.67s, 31.50s)
+2021-10-06 17:23:59,161 core  108769DEBUG   ('20186784', 'WB.SKC'): noise level at 7.3e-13
+2021-10-06 17:23:59,210 core  108765DEBUG   ('20186784', 'WB.STC'): bulk window (2.67s, 6.67s) coda window (6.67s, 30.91s)
+2021-10-06 17:23:59,243 core  108763DEBUG   ('20186784', 'WB.VAC'): noise level at 4.1e-12
+2021-10-06 17:23:59,244 core  108771DEBUG   ('20186784', 'WB.STC'): bulk window (2.67s, 6.67s) coda window (6.67s, 24.17s)
+2021-10-06 17:23:59,249 core  108769DEBUG   ('20186784', 'WB.KRC'): noise level at 1.7e-12
+2021-10-06 17:23:59,268 core  108765DEBUG   ('20186784', 'WB.VAC'): bulk window (2.72s, 6.72s) coda window (6.72s, 27.21s)
+2021-10-06 17:23:59,274 core  108761DEBUG   ('20186784', 'WB.LBC'): bulk window (2.67s, 6.67s) coda window (6.67s, 41.15s)
+2021-10-06 17:23:59,292 core  108769DEBUG   ('20186784', 'WB.ZHC'): noise level at 1.1e-12
+2021-10-06 17:23:59,316 core  108759DEBUG   ('20186784', 'WB.SKC'): bulk window (3.76s, 7.76s) coda window (7.76s, 41.92s)
+2021-10-06 17:23:59,326 core  108765DEBUG   ('20186784', 'WB.KVC'): bulk window (3.04s, 7.04s) coda window (7.04s, 34.16s)
+2021-10-06 17:23:59,329 core  108763DEBUG   ('20186784', 'WB.KVC'): noise level at 1.5e-12
+2021-10-06 17:23:59,335 core  108758DEBUG   ('20186784', 'WB.SKC'): bulk window (3.76s, 7.76s) coda window (7.76s, 54.26s)
+2021-10-06 17:23:59,345 core  108761DEBUG   ('20186784', 'WB.LBC'): cut coda at local minimum detected at 35.62s.
+2021-10-06 17:23:59,349 core  108771DEBUG   ('20186784', 'WB.VAC'): bulk window (2.72s, 6.72s) coda window (6.72s, 24.00s)
+2021-10-06 17:23:59,353 core  108769DEBUG   ('20186784', 'WB.NKC'): bulk window (2.45s, 6.45s) coda window (6.45s, 23.64s)
+2021-10-06 17:23:59,385 core  108765DEBUG   ('20186784', 'WB.POC'): bulk window (3.32s, 7.32s) coda window (7.32s, 32.82s)
+2021-10-06 17:23:59,415 core  108767DEBUG   ('20186784', 'WB.NKC'): noise level at 1.1e-12
+2021-10-06 17:23:59,442 core  108765DEBUG   ('20186784', 'WB.SKC'): bulk window (3.76s, 7.76s) coda window (7.76s, 26.16s)
+2021-10-06 17:23:59,456 core  108765DEBUG   ('20186784', 'WB.SKC'): cut coda at local minimum detected at 11.00s.
+2021-10-06 17:23:59,456 core  108763DEBUG   ('20186784', 'WB.POC'): noise level at 2.1e-12
+2021-10-06 17:23:59,457 core  108765DEBUG   ('20186784', 'WB.SKC'): coda window of length 3.2s shorter than 5.0 -> skip pair
+2021-10-06 17:23:59,468 core  108769DEBUG   ('20186784', 'WB.LBC'): bulk window (2.67s, 6.67s) coda window (6.67s, 24.03s)
+2021-10-06 17:23:59,472 core  108759DEBUG   ('20186784', 'WB.KRC'): bulk window (3.69s, 7.69s) coda window (7.69s, 49.52s)
+2021-10-06 17:23:59,488 core  108765DEBUG   ('20186784', 'WB.KRC'): bulk window (3.69s, 7.69s) coda window (7.69s, 28.93s)
+2021-10-06 17:23:59,539 core  108771DEBUG   ('20186784', 'WB.KVC'): bulk window (3.04s, 7.04s) coda window (7.04s, 24.33s)
+2021-10-06 17:23:59,568 core  108758DEBUG   ('20186784', 'WB.KRC'): bulk window (3.69s, 7.69s) coda window (7.69s, 54.19s)
+2021-10-06 17:23:59,581 core  108763DEBUG   ('20186784', 'WB.SKC'): noise level at 8.9e-13
+2021-10-06 17:23:59,581 core  108767DEBUG   ('20186784', 'WB.LBC'): noise level at 6.4e-13
+2021-10-06 17:23:59,620 core  108763DEBUG   ('20186784', 'WB.KRC'): noise level at 5.3e-12
+2021-10-06 17:23:59,629 core  108769DEBUG   ('20186784', 'WB.STC'): bulk window (2.67s, 6.67s) coda window (6.67s, 24.64s)
+2021-10-06 17:23:59,631 core  108771DEBUG   ('20186784', 'WB.POC'): bulk window (3.32s, 7.32s) coda window (7.32s, 24.17s)
+2021-10-06 17:23:59,633 core  108761DEBUG   ('20186784', 'WB.STC'): bulk window (2.67s, 6.67s) coda window (6.67s, 34.48s)
+2021-10-06 17:23:59,649 core  108763DEBUG   ('20186784', 'WB.ZHC'): noise level at 1.4e-12
+2021-10-06 17:23:59,707 core  108771DEBUG   ('20186784', 'WB.SKC'): bulk window (3.76s, 7.76s) coda window (7.76s, 25.09s)
+2021-10-06 17:23:59,743 core  108767DEBUG   ('20186784', 'WB.STC'): noise level at 1.6e-12
+2021-10-06 17:23:59,793 core  108769DEBUG   ('20186784', 'WB.VAC'): bulk window (2.72s, 6.72s) coda window (6.72s, 24.68s)
+2021-10-06 17:23:59,818 core  108763DEBUG   ('20186784', 'WB.NKC'): bulk window (2.45s, 6.45s) coda window (6.45s, 30.05s)
+2021-10-06 17:23:59,831 core  108761DEBUG   ('20186784', 'WB.VAC'): bulk window (2.72s, 6.72s) coda window (6.72s, 35.58s)
+2021-10-06 17:23:59,832 core  108767DEBUG   ('20186784', 'WB.VAC'): noise level at 1.2e-12
+2021-10-06 17:23:59,848 core  108759DEBUG   ('20186784', 'WB.ZHC'): bulk window (6.57s, 10.57s) coda window (10.57s, 57.07s)
+2021-10-06 17:23:59,849 core  108765DEBUG   ('20186784', 'WB.ZHC'): bulk window (6.57s, 10.57s) coda window (10.57s, 33.98s)
+2021-10-06 17:23:59,866 core  108769DEBUG   ('20186784', 'WB.VAC'): cut coda at local minimum detected at 20.35s.
+2021-10-06 17:23:59,891 core  108772DEBUG   ('20186784', 'WB.NKC'): noise level at 1.1e-13
+2021-10-06 17:23:59,892 core  108771DEBUG   ('20186784', 'WB.KRC'): bulk window (3.69s, 7.69s) coda window (7.69s, 23.07s)
+2021-10-06 17:23:59,895 core  108761DEBUG   ('20186784', 'WB.VAC'): cut coda at local minimum detected at 11.16s.
+2021-10-06 17:23:59,895 core  108761DEBUG   ('20186784', 'WB.VAC'): coda window of length 4.4s shorter than 5.0 -> skip pair
+2021-10-06 17:23:59,895 core  108758DEBUG   ('20186784', 'WB.ZHC'): bulk window (6.57s, 10.57s) coda window (10.57s, 57.07s)
+2021-10-06 17:23:59,944 core  108763DEBUG   ('20186784', 'WB.LBC'): bulk window (2.67s, 6.67s) coda window (6.67s, 35.28s)
+2021-10-06 17:23:59,952 core  108758DEBUG   ('20186784', 'WB.ZHC'): cut coda at local minimum detected at 43.01s.
+2021-10-06 17:23:59,954 core  108771DEBUG   ('20186784', 'WB.ZHC'): bulk window (6.57s, 10.57s) coda window (10.57s, 31.83s)
+2021-10-06 17:23:59,970 core  108769DEBUG   ('20186784', 'WB.KVC'): bulk window (3.04s, 7.04s) coda window (7.04s, 25.16s)
+2021-10-06 17:23:59,981 core  108767DEBUG   ('20186784', 'WB.KVC'): noise level at 1.2e-12
+2021-10-06 17:23:59,981 core  108761DEBUG   ('20186784', 'WB.KVC'): bulk window (3.04s, 7.04s) coda window (7.04s, 42.81s)
+2021-10-06 17:24:00,045 core  108772DEBUG   ('20186784', 'WB.LBC'): noise level at 1.4e-13
+2021-10-06 17:24:00,136 core  108767DEBUG   ('20186784', 'WB.POC'): noise level at 2.0e-12
+2021-10-06 17:24:00,222 core  108767DEBUG   ('20186784', 'WB.SKC'): noise level at 1.1e-12
+2021-10-06 17:24:00,228 core  108772DEBUG   ('20186784', 'WB.STC'): noise level at 1.9e-12
+2021-10-06 17:24:00,233 core  108763DEBUG   ('20186784', 'WB.STC'): bulk window (2.67s, 6.67s) coda window (6.67s, 34.46s)
+2021-10-06 17:24:00,283 core  108769DEBUG   ('20186784', 'WB.POC'): bulk window (3.32s, 7.32s) coda window (7.32s, 24.71s)
+2021-10-06 17:24:00,400 core  108748DEBUG   optimization solved WLS with 28822 equations and 7 unknowns 24 times, minimal error: 5.6e-01
+2021-10-06 17:24:00,401 core  108748DEBUG   freq band (0.71Hz, 1.41Hz): optimization result is {"g0": 1.967571421478752e-05, "b": 0.10353636010463392, "nstations": 6, "error": 0.5628934310089738, "W": {"20186784": 146801.19799537107}, "R": {"WB.NKC": 0.8721890679454956, "WB.VAC": 1.462060761560627, "WB.KVC": 1.0476143638548847, "WB.POC": 1.6401513422749836, "WB.SKC": 0.5363549805188133, "WB.KRC": 0.8509151448315428}, "v0": 3400}
+2021-10-06 17:24:00,386 core  108767DEBUG   ('20186784', 'WB.KRC'): noise level at 4.5e-12
+2021-10-06 17:24:00,440 core  108761DEBUG   ('20186784', 'WB.POC'): bulk window (3.32s, 7.32s) coda window (7.32s, 49.29s)
+2021-10-06 17:24:00,485 core  108763DEBUG   ('20186784', 'WB.VAC'): bulk window (2.72s, 6.72s) coda window (6.72s, 28.79s)
+2021-10-06 17:24:00,548 core  108772DEBUG   ('20186784', 'WB.VAC'): noise level at 2.0e-13
+2021-10-06 17:24:00,548 core  108769DEBUG   ('20186784', 'WB.SKC'): bulk window (3.76s, 7.76s) coda window (7.76s, 25.12s)
+2021-10-06 17:24:00,564 core  108767DEBUG   ('20186784', 'WB.ZHC'): noise level at 1.3e-12
+2021-10-06 17:24:00,593 core  108761DEBUG   ('20186784', 'WB.SKC'): bulk window (3.76s, 7.76s) coda window (7.76s, 39.66s)
+2021-10-06 17:24:00,594 core  108772DEBUG   ('20186784', 'WB.KVC'): noise level at 2.2e-12
+2021-10-06 17:24:00,616 core  108772DEBUG   ('20186784', 'WB.POC'): noise level at 1.3e-13
+2021-10-06 17:24:00,617 core  108769DEBUG   ('20186784', 'WB.KRC'): bulk window (3.69s, 7.69s) coda window (7.69s, 25.02s)
+2021-10-06 17:24:00,637 core  108772DEBUG   ('20186784', 'WB.SKC'): noise level at 3.6e-13
+2021-10-06 17:24:00,658 core  108772DEBUG   ('20186784', 'WB.KRC'): noise level at 1.2e-12
+2021-10-06 17:24:00,665 core  108763DEBUG   ('20186784', 'WB.KVC'): bulk window (3.04s, 7.04s) coda window (7.04s, 39.58s)
+2021-10-06 17:24:00,671 core  108769DEBUG   ('20186784', 'WB.ZHC'): bulk window (6.57s, 10.57s) coda window (10.57s, 33.87s)
+2021-10-06 17:24:00,680 core  108772DEBUG   ('20186784', 'WB.ZHC'): noise level at 4.1e-13
+2021-10-06 17:24:00,705 core  108772DEBUG   ('20186784', 'WB.NKC'): bulk window (2.45s, 6.45s) coda window (6.45s, 23.39s)
+2021-10-06 17:24:00,713 core  108761DEBUG   ('20186784', 'WB.KRC'): bulk window (3.69s, 7.69s) coda window (7.69s, 47.04s)
+2021-10-06 17:24:00,730 core  108761DEBUG   ('20186784', 'WB.KRC'): cut coda at local minimum detected at 10.54s.
+2021-10-06 17:24:00,730 core  108761DEBUG   ('20186784', 'WB.KRC'): coda window of length 2.9s shorter than 5.0 -> skip pair
+2021-10-06 17:24:00,761 core  108763DEBUG   ('20186784', 'WB.POC'): bulk window (3.32s, 7.32s) coda window (7.32s, 35.94s)
+2021-10-06 17:24:00,794 core  108772DEBUG   ('20186784', 'WB.LBC'): bulk window (2.67s, 6.67s) coda window (6.67s, 19.10s)
+2021-10-06 17:24:00,870 core  108767DEBUG   ('20186784', 'WB.NKC'): bulk window (2.45s, 6.45s) coda window (6.45s, 24.03s)
+2021-10-06 17:24:00,925 core  108761DEBUG   ('20186784', 'WB.ZHC'): bulk window (6.57s, 10.57s) coda window (10.57s, 48.99s)
+2021-10-06 17:24:01,218 core  108763DEBUG   ('20186784', 'WB.SKC'): bulk window (3.76s, 7.76s) coda window (7.76s, 33.78s)
+2021-10-06 17:24:01,359 core  108772DEBUG   ('20186784', 'WB.STC'): bulk window (2.67s, 6.67s) coda window (6.67s, 18.56s)
+2021-10-06 17:24:01,432 core  108763DEBUG   ('20186784', 'WB.KRC'): bulk window (3.69s, 7.69s) coda window (7.69s, 33.52s)
+2021-10-06 17:24:01,433 core  108767DEBUG   ('20186784', 'WB.LBC'): bulk window (2.67s, 6.67s) coda window (6.67s, 24.33s)
+2021-10-06 17:24:01,491 core  108772DEBUG   ('20186784', 'WB.VAC'): bulk window (2.72s, 6.72s) coda window (6.72s, 23.97s)
+2021-10-06 17:24:01,525 core  108767DEBUG   ('20186784', 'WB.STC'): bulk window (2.67s, 6.67s) coda window (6.67s, 25.99s)
+2021-10-06 17:24:01,539 core  108772DEBUG   ('20186784', 'WB.VAC'): cut coda at local minimum detected at 19.36s.
+2021-10-06 17:24:01,709 core  108767DEBUG   ('20186784', 'WB.VAC'): bulk window (2.72s, 6.72s) coda window (6.72s, 24.82s)
+2021-10-06 17:24:01,754 core  108772DEBUG   ('20186784', 'WB.KVC'): bulk window (3.04s, 7.04s) coda window (7.04s, 24.05s)
+2021-10-06 17:24:01,757 core  108763DEBUG   ('20186784', 'WB.ZHC'): bulk window (6.57s, 10.57s) coda window (10.57s, 39.07s)
+2021-10-06 17:24:01,801 core  108767DEBUG   ('20186784', 'WB.VAC'): cut coda at local minimum detected at 20.35s.
+2021-10-06 17:24:01,837 core  108772DEBUG   ('20186784', 'WB.KVC'): cut coda at local minimum detected at 19.56s.
+2021-10-06 17:24:01,965 core  108767DEBUG   ('20186784', 'WB.KVC'): bulk window (3.04s, 7.04s) coda window (7.04s, 27.41s)
+2021-10-06 17:24:02,098 core  108767DEBUG   ('20186784', 'WB.POC'): bulk window (3.32s, 7.32s) coda window (7.32s, 25.36s)
+2021-10-06 17:24:02,100 core  108772DEBUG   ('20186784', 'WB.POC'): bulk window (3.32s, 7.32s) coda window (7.32s, 24.04s)
+2021-10-06 17:24:02,152 core  108767DEBUG   ('20186784', 'WB.SKC'): bulk window (3.76s, 7.76s) coda window (7.76s, 26.58s)
+2021-10-06 17:24:02,362 core  108767DEBUG   ('20186784', 'WB.KRC'): bulk window (3.69s, 7.69s) coda window (7.69s, 25.86s)
+2021-10-06 17:24:02,442 core  108767DEBUG   ('20186784', 'WB.ZHC'): bulk window (6.57s, 10.57s) coda window (10.57s, 33.86s)
+2021-10-06 17:24:02,518 core  108772DEBUG   ('20186784', 'WB.SKC'): bulk window (3.76s, 7.76s) coda window (7.76s, 23.90s)
+2021-10-06 17:24:02,832 core  108772DEBUG   ('20186784', 'WB.KRC'): bulk window (3.69s, 7.69s) coda window (7.69s, 19.38s)
+2021-10-06 17:24:03,344 core  108772DEBUG   ('20186784', 'WB.ZHC'): bulk window (6.57s, 10.57s) coda window (10.57s, 27.34s)
+2021-10-06 17:24:08,947 core  108747DEBUG   optimization solved WLS with 27205 equations and 8 unknowns 25 times, minimal error: 5.8e-01
+2021-10-06 17:24:08,948 core  108747DEBUG   freq band (0.50Hz, 1.00Hz): optimization result is {"g0": 9.222197190948756e-06, "b": 0.030877482946173436, "nstations": 7, "error": 0.5849561952338872, "W": {"20186784": 52297.57471940259}, "R": {"WB.LBC": 1.5627570866985439, "WB.STC": 0.8398932404921141, "WB.VAC": 1.2724938807646278, "WB.KVC": 1.0141305385633492, "WB.POC": 1.0676111357073734, "WB.SKC": 0.7468979498524483, "WB.ZHC": 0.7403899433936655}, "v0": 3400}
+2021-10-06 17:24:09,204 core  108752DEBUG   optimization solved WLS with 43967 equations and 9 unknowns 25 times, minimal error: 6.0e-01
+2021-10-06 17:24:09,205 core  108752DEBUG   freq band (1.40Hz, 2.80Hz): optimization result is {"g0": 1.3180817486125667e-05, "b": 0.11709370628377685, "nstations": 8, "error": 0.6034924823630354, "W": {"20186784": 810321.4739283021}, "R": {"WB.NKC": 2.9332057155126092, "WB.STC": 0.8157986329727036, "WB.VAC": 1.2014027395381157, "WB.KVC": 0.6269345318195603, "WB.POC": 1.2298505137643683, "WB.SKC": 0.6029759244268907, "WB.KRC": 1.3987410469853112, "WB.ZHC": 0.5349018205277722}, "v0": 3400}
+2021-10-06 17:24:14,449 core  108750DEBUG   optimization solved WLS with 45098 equations and 9 unknowns 24 times, minimal error: 5.7e-01
+2021-10-06 17:24:14,450 core  108750DEBUG   freq band (1.00Hz, 2.00Hz): optimization result is {"g0": 1.6684320347753957e-05, "b": 0.11757974507955547, "nstations": 8, "error": 0.5671373303790741, "W": {"20186784": 421823.2747599339}, "R": {"WB.NKC": 1.4394108986731955, "WB.STC": 0.868537160328962, "WB.VAC": 1.3284360892920428, "WB.KVC": 0.809700017359832, "WB.POC": 1.6156762210627713, "WB.SKC": 0.5848651249648827, "WB.KRC": 1.048986766625841, "WB.ZHC": 0.7502084070117201}, "v0": 3400}
+2021-10-06 17:24:16,452 core  108754DEBUG   optimization solved WLS with 48199 equations and 9 unknowns 26 times, minimal error: 5.3e-01
+2021-10-06 17:24:16,453 core  108754DEBUG   freq band (2.00Hz, 4.00Hz): optimization result is {"g0": 6.113365367007283e-06, "b": 0.07207977337487961, "nstations": 8, "error": 0.5301906537814676, "W": {"20186784": 1441208.363293291}, "R": {"WB.NKC": 2.023569512923045, "WB.LBC": 1.2531409649691894, "WB.STC": 0.7574746725040782, "WB.VAC": 0.9986812867141452, "WB.KVC": 0.596070328459153, "WB.POC": 1.315524979699681, "WB.KRC": 1.9399722000344317, "WB.ZHC": 0.34268477324572927}, "v0": 3400}
+2021-10-06 17:24:17,056 core  108765DEBUG   optimization solved WLS with 41718 equations and 8 unknowns 25 times, minimal error: 5.5e-01
+2021-10-06 17:24:17,057 core  108765DEBUG   freq band (16.00Hz, 32.00Hz): optimization result is {"g0": 8.987321357370736e-06, "b": 0.0930628357327993, "nstations": 7, "error": 0.5490595522572731, "W": {"20186784": 670949.7680228798}, "R": {"WB.LBC": 0.5386624130532948, "WB.STC": 1.0785326032060867, "WB.VAC": 0.6083133912164087, "WB.KVC": 0.8547991232341196, "WB.POC": 1.1091206591333367, "WB.KRC": 2.767024460295172, "WB.ZHC": 1.0786158841364841}, "v0": 3400}
+2021-10-06 17:24:17,538 core  108772DEBUG   optimization solved WLS with 31952 equations and 10 unknowns 23 times, minimal error: 4.4e-01
+2021-10-06 17:24:17,539 core  108772DEBUG   freq band (64.00Hz, 128.00Hz): optimization result is {"g0": 2.2995743181338155e-05, "b": 0.15972255564339183, "nstations": 9, "error": 0.4373234263000177, "W": {"20186784": 36667.550091666526}, "R": {"WB.NKC": 0.2396090041762608, "WB.LBC": 0.2269563594360612, "WB.STC": 4.590369344756697, "WB.VAC": 0.6030544852884354, "WB.KVC": 4.86408513903466, "WB.POC": 0.28847088203725635, "WB.SKC": 0.7900201207131078, "WB.KRC": 1.8962477115084615, "WB.ZHC": 3.1601955293408963}, "v0": 3400}
+2021-10-06 17:24:18,436 core  108771DEBUG   optimization solved WLS with 39208 equations and 10 unknowns 25 times, minimal error: 4.4e-01
+2021-10-06 17:24:18,437 core  108771DEBUG   freq band (45.27Hz, 90.53Hz): optimization result is {"g0": 1.2697976756839455e-05, "b": 0.11337509756694891, "nstations": 9, "error": 0.43867610556205705, "W": {"20186784": 63434.27906432665}, "R": {"WB.NKC": 0.5490657842055691, "WB.LBC": 0.1781844355112502, "WB.STC": 2.8165728349758865, "WB.VAC": 0.888232775833322, "WB.KVC": 2.757824397864757, "WB.POC": 0.482708308137935, "WB.SKC": 0.7421500170309703, "WB.KRC": 1.1535156435748946, "WB.ZHC": 3.585019308639545}, "v0": 3400}
+2021-10-06 17:24:19,197 core  108767DEBUG   optimization solved WLS with 41739 equations and 10 unknowns 25 times, minimal error: 4.5e-01
+2021-10-06 17:24:19,224 core  108767DEBUG   freq band (22.60Hz, 45.20Hz): optimization result is {"g0": 1.3291710784584765e-05, "b": 0.10150684301583535, "nstations": 9, "error": 0.44937531737294034, "W": {"20186784": 241936.85244985725}, "R": {"WB.NKC": 0.5329708185102691, "WB.LBC": 0.4134379189252936, "WB.STC": 1.0603205927244186, "WB.VAC": 0.7846340632589607, "WB.KVC": 0.7346759833203963, "WB.POC": 1.6086256795869565, "WB.SKC": 0.5916016081727843, "WB.KRC": 4.072581011698006, "WB.ZHC": 1.9157198121555026}, "v0": 3400}
+2021-10-06 17:24:19,251 core  108769DEBUG   optimization solved WLS with 39930 equations and 10 unknowns 25 times, minimal error: 4.2e-01
+2021-10-06 17:24:19,252 core  108769DEBUG   freq band (32.00Hz, 64.00Hz): optimization result is {"g0": 1.3353702022565421e-05, "b": 0.10656652904281633, "nstations": 9, "error": 0.41622171441624173, "W": {"20186784": 135021.1178829617}, "R": {"WB.NKC": 0.5080219575676086, "WB.LBC": 0.17787766908813407, "WB.STC": 1.2586344373905554, "WB.VAC": 0.9997499454554429, "WB.KVC": 1.409514722773979, "WB.POC": 1.3216874175455975, "WB.SKC": 0.7323768974077842, "WB.KRC": 2.101362101255722, "WB.ZHC": 3.0674054407649343}, "v0": 3400}
+2021-10-06 17:24:20,296 core  108761DEBUG   optimization solved WLS with 60422 equations and 8 unknowns 26 times, minimal error: 4.6e-01
+2021-10-06 17:24:20,297 core  108761DEBUG   freq band (8.00Hz, 16.00Hz): optimization result is {"g0": 7.5503433759160855e-06, "b": 0.058135679147849485, "nstations": 7, "error": 0.45785226427082487, "W": {"20186784": 777849.5627963941}, "R": {"WB.NKC": 1.7249308185754004, "WB.LBC": 0.9047155991848551, "WB.STC": 1.3935807988829025, "WB.KVC": 0.7199866446564004, "WB.POC": 1.7704066647886778, "WB.SKC": 0.5099683629674179, "WB.ZHC": 0.707364686745993}, "v0": 3400}
+2021-10-06 17:24:20,633 core  108756DEBUG   optimization solved WLS with 65758 equations and 10 unknowns 27 times, minimal error: 5.0e-01
+2021-10-06 17:24:20,639 core  108756DEBUG   freq band (2.80Hz, 5.60Hz): optimization result is {"g0": 4.076108783255257e-06, "b": 0.04934889532408292, "nstations": 9, "error": 0.49665184502090615, "W": {"20186784": 1744737.1772461534}, "R": {"WB.NKC": 2.3463339009661324, "WB.LBC": 1.1390597704346113, "WB.STC": 0.8739908790467703, "WB.VAC": 1.1061439636186186, "WB.KVC": 0.6868802582489212, "WB.POC": 1.123244287769427, "WB.SKC": 0.4337077181580447, "WB.KRC": 2.417734801285889, "WB.ZHC": 0.47839215703238186}, "v0": 3400}
+2021-10-06 17:24:22,401 core  108763DEBUG   optimization solved WLS with 60912 equations and 10 unknowns 26 times, minimal error: 6.2e-01
+2021-10-06 17:24:22,402 core  108763DEBUG   freq band (11.33Hz, 22.67Hz): optimization result is {"g0": 8.334095905573629e-06, "b": 0.08029399409637927, "nstations": 9, "error": 0.6170714175597616, "W": {"20186784": 836837.3068236385}, "R": {"WB.NKC": 0.9688889277315604, "WB.LBC": 0.7628991903601425, "WB.STC": 1.1751638438084466, "WB.VAC": 1.4929544441006588, "WB.KVC": 0.7951709838139764, "WB.POC": 1.5347965701072774, "WB.SKC": 0.2642989565207902, "WB.KRC": 3.1539713011340096, "WB.ZHC": 0.7579653391978213}, "v0": 3400}
+2021-10-06 17:24:22,589 core  108758DEBUG   optimization solved WLS with 66423 equations and 10 unknowns 27 times, minimal error: 4.8e-01
+2021-10-06 17:24:22,590 core  108758DEBUG   freq band (4.00Hz, 8.00Hz): optimization result is {"g0": 4.42437766545644e-06, "b": 0.04721083035819078, "nstations": 9, "error": 0.48284306209259525, "W": {"20186784": 1948700.1121586638}, "R": {"WB.NKC": 2.181966295859312, "WB.LBC": 0.8832583713807165, "WB.STC": 1.0032538209050326, "WB.VAC": 1.4249324598223994, "WB.KVC": 0.6118680284053766, "WB.POC": 1.1284931779657283, "WB.SKC": 0.4692516547861215, "WB.KRC": 2.5884532033174175, "WB.ZHC": 0.4327691238114031}, "v0": 3400}
+2021-10-06 17:24:22,716 core  108759DEBUG   optimization solved WLS with 71609 equations and 10 unknowns 27 times, minimal error: 4.5e-01
+2021-10-06 17:24:22,717 core  108759DEBUG   freq band (5.67Hz, 11.33Hz): optimization result is {"g0": 5.02061149870251e-06, "b": 0.04737525498205739, "nstations": 9, "error": 0.4534016606406622, "W": {"20186784": 1622031.515059304}, "R": {"WB.NKC": 2.0199153146313824, "WB.LBC": 0.7479852517540434, "WB.STC": 1.0419186541806837, "WB.VAC": 1.4417453051301532, "WB.KVC": 0.5611848527620302, "WB.POC": 1.2650091581942604, "WB.SKC": 0.4242499627576045, "WB.KRC": 2.551926318717645, "WB.ZHC": 0.5732735309620275}, "v0": 3400}
+2021-10-06 17:24:22,755 core  108748DEBUG   create optimization plot at 01_go_20186784/plots/optimization_20186784_00.71Hz-01.41Hz.png
+2021-10-06 17:24:23,386 core  108752DEBUG   create optimization plot at 01_go_20186784/plots/optimization_20186784_01.40Hz-02.80Hz.png
+2021-10-06 17:24:23,561 core  108750DEBUG   create optimization plot at 01_go_20186784/plots/optimization_20186784_01.00Hz-02.00Hz.png
+2021-10-06 17:24:23,635 core  108767DEBUG   create optimization plot at 01_go_20186784/plots/optimization_20186784_22.60Hz-45.20Hz.png
+2021-10-06 17:24:23,850 core  108765DEBUG   create optimization plot at 01_go_20186784/plots/optimization_20186784_16.00Hz-32.00Hz.png
+2021-10-06 17:24:23,999 core  108747DEBUG   create optimization plot at 01_go_20186784/plots/optimization_20186784_00.50Hz-01.00Hz.png
+2021-10-06 17:24:24,532 core  108769DEBUG   create optimization plot at 01_go_20186784/plots/optimization_20186784_32.00Hz-64.00Hz.png
+2021-10-06 17:24:24,538 core  108771DEBUG   create optimization plot at 01_go_20186784/plots/optimization_20186784_45.27Hz-90.53Hz.png
+2021-10-06 17:24:24,613 core  108754DEBUG   create optimization plot at 01_go_20186784/plots/optimization_20186784_02.00Hz-04.00Hz.png
+2021-10-06 17:24:24,844 core  108772DEBUG   create optimization plot at 01_go_20186784/plots/optimization_20186784_64.00Hz-128.00Hz.png
+2021-10-06 17:24:24,858 core  108761DEBUG   create optimization plot at 01_go_20186784/plots/optimization_20186784_08.00Hz-16.00Hz.png
+2021-10-06 17:24:24,865 core  108756DEBUG   create optimization plot at 01_go_20186784/plots/optimization_20186784_02.80Hz-05.60Hz.png
+2021-10-06 17:24:25,283 core  108748DEBUG   create fits plot at 01_go_20186784/plots/fits_20186784_00.71Hz-01.41Hz.png
+2021-10-06 17:24:25,303 core  108763DEBUG   create optimization plot at 01_go_20186784/plots/optimization_20186784_11.33Hz-22.67Hz.png
+2021-10-06 17:24:25,374 core  108758DEBUG   create optimization plot at 01_go_20186784/plots/optimization_20186784_04.00Hz-08.00Hz.png
+2021-10-06 17:24:25,426 core  108759DEBUG   create optimization plot at 01_go_20186784/plots/optimization_20186784_05.67Hz-11.33Hz.png
+2021-10-06 17:24:26,130 core  108752DEBUG   create fits plot at 01_go_20186784/plots/fits_20186784_01.40Hz-02.80Hz.png
+2021-10-06 17:24:26,230 core  108767DEBUG   create fits plot at 01_go_20186784/plots/fits_20186784_22.60Hz-45.20Hz.png
+2021-10-06 17:24:26,243 core  108765DEBUG   create fits plot at 01_go_20186784/plots/fits_20186784_16.00Hz-32.00Hz.png
+2021-10-06 17:24:26,356 core  108750DEBUG   create fits plot at 01_go_20186784/plots/fits_20186784_01.00Hz-02.00Hz.png
+2021-10-06 17:24:26,679 core  108747DEBUG   create fits plot at 01_go_20186784/plots/fits_20186784_00.50Hz-01.00Hz.png
+2021-10-06 17:24:27,273 core  108754DEBUG   create fits plot at 01_go_20186784/plots/fits_20186784_02.00Hz-04.00Hz.png
+2021-10-06 17:24:27,468 core  108761DEBUG   create fits plot at 01_go_20186784/plots/fits_20186784_08.00Hz-16.00Hz.png
+2021-10-06 17:24:27,617 core  108769DEBUG   create fits plot at 01_go_20186784/plots/fits_20186784_32.00Hz-64.00Hz.png
+2021-10-06 17:24:27,630 core  108756DEBUG   create fits plot at 01_go_20186784/plots/fits_20186784_02.80Hz-05.60Hz.png
+2021-10-06 17:24:27,796 core  108771DEBUG   create fits plot at 01_go_20186784/plots/fits_20186784_45.27Hz-90.53Hz.png
+2021-10-06 17:24:28,106 core  108758DEBUG   create fits plot at 01_go_20186784/plots/fits_20186784_04.00Hz-08.00Hz.png
+2021-10-06 17:24:28,119 core  108763DEBUG   create fits plot at 01_go_20186784/plots/fits_20186784_11.33Hz-22.67Hz.png
+2021-10-06 17:24:28,169 core  108772DEBUG   create fits plot at 01_go_20186784/plots/fits_20186784_64.00Hz-128.00Hz.png
+2021-10-06 17:24:28,176 core  108759DEBUG   create fits plot at 01_go_20186784/plots/fits_20186784_05.67Hz-11.33Hz.png
+2021-10-06 17:24:28,560 source108435DEBUG   Optimization for M0 and ('fc', 'n') terminated because of b'convergence: norm_of_projected_gradient_<=_pgtol'
+2021-10-06 17:24:28,561 core  108435DEBUG   result is {"freq": [0.75, 1.06, 1.5, 2.1, 3.0, 4.2, 6.0, 8.5, 12.0, 17.0, 24.0, 33.9, 48.0, 67.9, 96.0], "g0": [9.222197190948756e-06, 1.967571421478752e-05, 1.6684320347753957e-05, 1.3180817486125667e-05, 6.113365367007283e-06, 4.076108783255257e-06, 4.42437766545644e-06, 5.02061149870251e-06, 7.5503433759160855e-06, 8.334095905573629e-06, 8.987321357370736e-06, 1.3291710784584765e-05, 1.3353702022565421e-05, 1.2697976756839455e-05, 2.2995743181338155e-05], "b": [0.030877482946173436, 0.10353636010463392, 0.11757974507955547, 0.11709370628377685, 0.07207977337487961, 0.04934889532408292, 0.04721083035819078, 0.04737525498205739, 0.058135679147849485, 0.08029399409637927, 0.0930628357327993, 0.10150684301583535, 0.10656652904281633, 0.11337509756694891, 0.15972255564339183], "nstations": [7, 6, 8, 8, 8, 9, 9, 9, 7, 9, 7, 9, 9, 9, 9], "error": [0.5849561952338872, 0.5628934310089738, 0.5671373303790741, 0.6034924823630354, 0.5301906537814676, 0.49665184502090615, 0.48284306209259525, 0.4534016606406622, 0.45785226427082487, 0.6170714175597616, 0.5490595522572731, 0.44937531737294034, 0.41622171441624173, 0.43867610556205705, 0.4373234263000177], "R": {"WB.LBC": [1.5627570866985439, null, null, null, 1.2531409649691894, 1.1390597704346113, 0.8832583713807165, 0.7479852517540434, 0.9047155991848551, 0.7628991903601425, 0.5386624130532948, 0.4134379189252936, 0.17787766908813407, 0.1781844355112502, 0.2269563594360612], "WB.STC": [0.8398932404921141, null, 0.868537160328962, 0.8157986329727036, 0.7574746725040782, 0.8739908790467703, 1.0032538209050326, 1.0419186541806837, 1.3935807988829025, 1.1751638438084466, 1.0785326032060867, 1.0603205927244186, 1.2586344373905554, 2.8165728349758865, 4.590369344756697], "WB.POC": [1.0676111357073734, 1.6401513422749836, 1.6156762210627713, 1.2298505137643683, 1.315524979699681, 1.123244287769427, 1.1284931779657283, 1.2650091581942604, 1.7704066647886778, 1.5347965701072774, 1.1091206591333367, 1.6086256795869565, 1.3216874175455975, 0.482708308137935, 0.28847088203725635], "WB.KRC": [null, 0.8509151448315428, 1.048986766625841, 1.3987410469853112, 1.9399722000344317, 2.417734801285889, 2.5884532033174175, 2.551926318717645, null, 3.1539713011340096, 2.767024460295172, 4.072581011698006, 2.101362101255722, 1.1535156435748946, 1.8962477115084615], "WB.VAC": [1.2724938807646278, 1.462060761560627, 1.3284360892920428, 1.2014027395381157, 0.9986812867141452, 1.1061439636186186, 1.4249324598223994, 1.4417453051301532, null, 1.4929544441006588, 0.6083133912164087, 0.7846340632589607, 0.9997499454554429, 0.888232775833322, 0.6030544852884354], "WB.ZHC": [0.7403899433936655, null, 0.7502084070117201, 0.5349018205277722, 0.34268477324572927, 0.47839215703238186, 0.4327691238114031, 0.5732735309620275, 0.707364686745993, 0.7579653391978213, 1.0786158841364841, 1.9157198121555026, 3.0674054407649343, 3.585019308639545, 3.1601955293408963], "WB.NKC": [null, 0.8721890679454956, 1.4394108986731955, 2.9332057155126092, 2.023569512923045, 2.3463339009661324, 2.181966295859312, 2.0199153146313824, 1.7249308185754004, 0.9688889277315604, null, 0.5329708185102691, 0.5080219575676086, 0.5490657842055691, 0.2396090041762608], "WB.KVC": [1.0141305385633492, 1.0476143638548847, 0.809700017359832, 0.6269345318195603, 0.596070328459153, 0.6868802582489212, 0.6118680284053766, 0.5611848527620302, 0.7199866446564004, 0.7951709838139764, 0.8547991232341196, 0.7346759833203963, 1.409514722773979, 2.757824397864757, 4.86408513903466], "WB.SKC": [0.7468979498524483, 0.5363549805188133, 0.5848651249648827, 0.6029759244268907, null, 0.4337077181580447, 0.4692516547861215, 0.4242499627576045, 0.5099683629674179, 0.2642989565207902, null, 0.5916016081727843, 0.7323768974077842, 0.7421500170309703, 0.7900201207131078]}, "events": {"20186784": {"M0": 11725723882364.768, "Mw": 2.642759775461341, "Mcat": 2.8, "fc": 5.46008077175227, "n": 1.8073431207211463, "W": [52297.57471940259, 146801.19799537107, 421823.2747599339, 810321.4739283021, 1441208.363293291, 1744737.1772461534, 1948700.1121586638, 1622031.515059304, 777849.5627963941, 836837.3068236385, 670949.7680228798, 241936.85244985725, 135021.1178829617, 63434.27906432665, 36667.550091666526], "sds": [9348857621346.52, 11082505848996.305, 13275565964088.336, 13142815579013.602, 12269339016110.254, 9642613328659.094, 7133460968108.558, 4593986904577.822, 2253437900901.205, 1649873434414.0198, 1046436299641.7157, 444867162156.1671, 234713811983.01352, 113729011531.36076, 61157362633.71811], "fit_error": 0.12511273201550688}}, "v0": 3400}
+2021-10-06 17:24:32,777 core  108435DEBUG   create eventresult plot at 01_go_20186784/plots/eventresult_20186784.png
+2021-10-06 17:24:35,882 core  108435DEBUG   create eventsites plot at 01_go_20186784/plots/eventsites_20186784.png
+2021-10-06 17:24:35,884 core  108435INFO    event 20186784 (no 1 of 1): end processing
+2021-10-06 17:24:35,919 warnings108435WARNING /home/eule/anaconda/envs/eqspec/lib/python3.8/site-packages/matplotlib/axes/_base.py:2283: UserWarning: Warning: converting a masked element to nan.
+  xys = np.asarray(xys)
+
+2021-10-06 17:24:35,942 warnings108435WARNING /home/eule/anaconda/envs/eqspec/lib/python3.8/site-packages/matplotlib/axes/_base.py:2283: UserWarning: Warning: converting a masked element to nan.
+  xys = np.asarray(xys)
+
+2021-10-06 17:24:35,965 warnings108435WARNING /home/eule/anaconda/envs/eqspec/lib/python3.8/site-packages/matplotlib/axes/_base.py:2283: UserWarning: Warning: converting a masked element to nan.
+  xys = np.asarray(xys)
+
+2021-10-06 17:24:35,988 warnings108435WARNING /home/eule/anaconda/envs/eqspec/lib/python3.8/site-packages/matplotlib/axes/_base.py:2283: UserWarning: Warning: converting a masked element to nan.
+  xys = np.asarray(xys)
+
+2021-10-06 17:24:36,012 warnings108435WARNING /home/eule/anaconda/envs/eqspec/lib/python3.8/site-packages/matplotlib/axes/_base.py:2283: UserWarning: Warning: converting a masked element to nan.
+  xys = np.asarray(xys)
+
+2021-10-06 17:24:36,035 warnings108435WARNING /home/eule/anaconda/envs/eqspec/lib/python3.8/site-packages/matplotlib/axes/_base.py:2283: UserWarning: Warning: converting a masked element to nan.
+  xys = np.asarray(xys)
+
+2021-10-06 17:24:36,054 warnings108435WARNING /home/eule/anaconda/envs/eqspec/lib/python3.8/site-packages/matplotlib/axes/_base.py:2283: UserWarning: Warning: converting a masked element to nan.
+  xys = np.asarray(xys)
+
+2021-10-06 17:24:38,292 core  108435DEBUG   create results plot at 01_go_20186784/results.pdf
+2021-10-06 17:24:38,311 warnings108435WARNING /home/eule/anaconda/envs/eqspec/lib/python3.8/site-packages/matplotlib/axes/_base.py:2283: UserWarning: Warning: converting a masked element to nan.
+  xys = np.asarray(xys)
+
+2021-10-06 17:24:38,335 warnings108435WARNING /home/eule/anaconda/envs/eqspec/lib/python3.8/site-packages/matplotlib/axes/_base.py:2283: UserWarning: Warning: converting a masked element to nan.
+  xys = np.asarray(xys)
+
+2021-10-06 17:24:38,363 warnings108435WARNING /home/eule/anaconda/envs/eqspec/lib/python3.8/site-packages/matplotlib/axes/_base.py:2283: UserWarning: Warning: converting a masked element to nan.
+  xys = np.asarray(xys)
+
+2021-10-06 17:24:38,390 warnings108435WARNING /home/eule/anaconda/envs/eqspec/lib/python3.8/site-packages/matplotlib/axes/_base.py:2283: UserWarning: Warning: converting a masked element to nan.
+  xys = np.asarray(xys)
+
+2021-10-06 17:24:38,416 warnings108435WARNING /home/eule/anaconda/envs/eqspec/lib/python3.8/site-packages/matplotlib/axes/_base.py:2283: UserWarning: Warning: converting a masked element to nan.
+  xys = np.asarray(xys)
+
+2021-10-06 17:24:38,445 warnings108435WARNING /home/eule/anaconda/envs/eqspec/lib/python3.8/site-packages/matplotlib/axes/_base.py:2283: UserWarning: Warning: converting a masked element to nan.
+  xys = np.asarray(xys)
+
+2021-10-06 17:24:38,475 warnings108435WARNING /home/eule/anaconda/envs/eqspec/lib/python3.8/site-packages/matplotlib/axes/_base.py:2283: UserWarning: Warning: converting a masked element to nan.
+  xys = np.asarray(xys)
+
+2021-10-06 17:24:38,497 warnings108435WARNING /home/eule/anaconda/envs/eqspec/lib/python3.8/site-packages/matplotlib/axes/_base.py:2283: UserWarning: Warning: converting a masked element to nan.
+  xys = np.asarray(xys)
+
+2021-10-06 17:24:38,622 warnings108435WARNING /home/eule/anaconda/envs/eqspec/lib/python3.8/site-packages/matplotlib/axes/_base.py:2283: UserWarning: Warning: converting a masked element to nan.
+  xys = np.asarray(xys)
+
+2021-10-06 17:24:41,276 core  108435DEBUG   create sites plot at 01_go_20186784/sites.pdf
+2021-10-06 17:24:41,725 core  108435DEBUG   create sds plot at 01_go_20186784/sds.pdf
+2021-10-06 17:24:42,023 core  108435DEBUG   create mags plot at 01_go_20186784/mags.pdf
+2021-10-06 17:24:42,024 core  108435DEBUG   inversion results: {"freq": [0.75, 1.06, 1.5, 2.1, 3.0, 4.2, 6.0, 8.5, 12.0, 17.0, 24.0, 33.9, 48.0, 67.9, 96.0], "g0": [9.222197190948763e-06, 1.967571421478751e-05, 1.668432034775395e-05, 1.3180817486125665e-05, 6.113365367007286e-06, 4.0761087832552585e-06, 4.424377665456435e-06, 5.020611498702505e-06, 7.550343375916083e-06, 8.334095905573625e-06, 8.98732135737073e-06, 1.329171078458477e-05, 1.335370202256542e-05, 1.2697976756839462e-05, 2.299574318133814e-05], "b": [0.030877482946173433, 0.1035363601046339, 0.11757974507955543, 0.11709370628377683, 0.07207977337487959, 0.04934889532408293, 0.04721083035819076, 0.047375254982057385, 0.05813567914784949, 0.08029399409637925, 0.09306283573279929, 0.10150684301583536, 0.10656652904281633, 0.1133750975669489, 0.15972255564339186], "error": [0.5849561952338872, 0.5628934310089739, 0.5671373303790741, 0.6034924823630354, 0.5301906537814676, 0.49665184502090615, 0.48284306209259525, 0.45340166064066223, 0.4578522642708249, 0.6170714175597616, 0.5490595522572731, 0.4493753173729403, 0.41622171441624173, 0.43867610556205705, 0.4373234263000177], "R": {"WB.LBC": [1.5627570866985439, null, null, null, 1.2531409649691894, 1.1390597704346113, 0.8832583713807165, 0.7479852517540434, 0.9047155991848551, 0.7628991903601425, 0.5386624130532948, 0.4134379189252936, 0.1778776690881341, 0.1781844355112502, 0.2269563594360612], "WB.STC": [0.8398932404921141, null, 0.868537160328962, 0.8157986329727036, 0.7574746725040782, 0.8739908790467703, 1.0032538209050326, 1.0419186541806837, 1.3935807988829025, 1.1751638438084466, 1.0785326032060867, 1.0603205927244186, 1.2586344373905554, 2.816572834975886, 4.590369344756696], "WB.POC": [1.0676111357073734, 1.6401513422749836, 1.6156762210627713, 1.2298505137643683, 1.315524979699681, 1.123244287769427, 1.1284931779657283, 1.2650091581942604, 1.770406664788678, 1.5347965701072774, 1.1091206591333367, 1.6086256795869565, 1.3216874175455975, 0.482708308137935, 0.2884708820372564], "WB.KRC": [null, 0.8509151448315428, 1.048986766625841, 1.3987410469853112, 1.9399722000344317, 2.417734801285889, 2.5884532033174175, 2.551926318717645, null, 3.1539713011340096, 2.7670244602951715, 4.072581011698006, 2.101362101255722, 1.1535156435748946, 1.8962477115084615], "WB.VAC": [1.2724938807646278, 1.462060761560627, 1.3284360892920428, 1.2014027395381157, 0.9986812867141452, 1.1061439636186186, 1.4249324598223994, 1.4417453051301532, null, 1.4929544441006588, 0.6083133912164087, 0.7846340632589607, 0.9997499454554429, 0.888232775833322, 0.6030544852884354], "WB.ZHC": [0.7403899433936655, null, 0.7502084070117201, 0.5349018205277722, 0.34268477324572927, 0.47839215703238186, 0.4327691238114031, 0.5732735309620275, 0.707364686745993, 0.7579653391978213, 1.0786158841364841, 1.9157198121555026, 3.0674054407649343, 3.585019308639545, 3.1601955293408963], "WB.NKC": [null, 0.8721890679454956, 1.4394108986731955, 2.933205715512609, 2.023569512923045, 2.3463339009661324, 2.181966295859312, 2.0199153146313824, 1.7249308185754006, 0.9688889277315604, null, 0.5329708185102691, 0.5080219575676086, 0.5490657842055691, 0.2396090041762608], "WB.KVC": [1.0141305385633492, 1.0476143638548847, 0.809700017359832, 0.6269345318195603, 0.596070328459153, 0.6868802582489212, 0.6118680284053766, 0.5611848527620302, 0.7199866446564004, 0.7951709838139764, 0.8547991232341196, 0.7346759833203963, 1.409514722773979, 2.7578243978647565, 4.86408513903466], "WB.SKC": [0.7468979498524483, 0.5363549805188133, 0.5848651249648827, 0.6029759244268907, null, 0.4337077181580447, 0.4692516547861215, 0.42424996275760446, 0.5099683629674179, 0.2642989565207902, null, 0.5916016081727843, 0.7323768974077842, 0.7421500170309703, 0.7900201207131078]}, "events": {"20186784": {"M0": 11725723882364.768, "Mw": 2.642759775461341, "Mcat": 2.8, "fc": 5.46008077175227, "n": 1.8073431207211463, "g0": [9.222197190948756e-06, 1.967571421478752e-05, 1.6684320347753957e-05, 1.3180817486125667e-05, 6.113365367007283e-06, 4.076108783255257e-06, 4.42437766545644e-06, 5.02061149870251e-06, 7.5503433759160855e-06, 8.334095905573629e-06, 8.987321357370736e-06, 1.3291710784584765e-05, 1.3353702022565421e-05, 1.2697976756839455e-05, 2.2995743181338155e-05], "b": [0.030877482946173436, 0.10353636010463392, 0.11757974507955547, 0.11709370628377685, 0.07207977337487961, 0.04934889532408292, 0.04721083035819078, 0.04737525498205739, 0.058135679147849485, 0.08029399409637927, 0.0930628357327993, 0.10150684301583535, 0.10656652904281633, 0.11337509756694891, 0.15972255564339183], "nstations": [7, 6, 8, 8, 8, 9, 9, 9, 7, 9, 7, 9, 9, 9, 9], "error": [0.5849561952338872, 0.5628934310089738, 0.5671373303790741, 0.6034924823630354, 0.5301906537814676, 0.49665184502090615, 0.48284306209259525, 0.4534016606406622, 0.45785226427082487, 0.6170714175597616, 0.5490595522572731, 0.44937531737294034, 0.41622171441624173, 0.43867610556205705, 0.4373234263000177], "W": [52297.57471940259, 146801.19799537107, 421823.2747599339, 810321.4739283021, 1441208.363293291, 1744737.1772461534, 1948700.1121586638, 1622031.515059304, 777849.5627963941, 836837.3068236385, 670949.7680228798, 241936.85244985725, 135021.1178829617, 63434.27906432665, 36667.550091666526], "sds": [9348857621346.52, 11082505848996.305, 13275565964088.336, 13142815579013.602, 12269339016110.254, 9642613328659.094, 7133460968108.558, 4593986904577.822, 2253437900901.205, 1649873434414.0198, 1046436299641.7157, 444867162156.1671, 234713811983.01352, 113729011531.36076, 61157362633.71811], "fit_error": 0.12511273201550688, "R": {"WB.LBC": [1.5627570866985439, null, null, null, 1.2531409649691894, 1.1390597704346113, 0.8832583713807165, 0.7479852517540434, 0.9047155991848551, 0.7628991903601425, 0.5386624130532948, 0.4134379189252936, 0.17787766908813407, 0.1781844355112502, 0.2269563594360612], "WB.STC": [0.8398932404921141, null, 0.868537160328962, 0.8157986329727036, 0.7574746725040782, 0.8739908790467703, 1.0032538209050326, 1.0419186541806837, 1.3935807988829025, 1.1751638438084466, 1.0785326032060867, 1.0603205927244186, 1.2586344373905554, 2.8165728349758865, 4.590369344756697], "WB.POC": [1.0676111357073734, 1.6401513422749836, 1.6156762210627713, 1.2298505137643683, 1.315524979699681, 1.123244287769427, 1.1284931779657283, 1.2650091581942604, 1.7704066647886778, 1.5347965701072774, 1.1091206591333367, 1.6086256795869565, 1.3216874175455975, 0.482708308137935, 0.28847088203725635], "WB.KRC": [null, 0.8509151448315428, 1.048986766625841, 1.3987410469853112, 1.9399722000344317, 2.417734801285889, 2.5884532033174175, 2.551926318717645, null, 3.1539713011340096, 2.767024460295172, 4.072581011698006, 2.101362101255722, 1.1535156435748946, 1.8962477115084615], "WB.VAC": [1.2724938807646278, 1.462060761560627, 1.3284360892920428, 1.2014027395381157, 0.9986812867141452, 1.1061439636186186, 1.4249324598223994, 1.4417453051301532, null, 1.4929544441006588, 0.6083133912164087, 0.7846340632589607, 0.9997499454554429, 0.888232775833322, 0.6030544852884354], "WB.ZHC": [0.7403899433936655, null, 0.7502084070117201, 0.5349018205277722, 0.34268477324572927, 0.47839215703238186, 0.4327691238114031, 0.5732735309620275, 0.707364686745993, 0.7579653391978213, 1.0786158841364841, 1.9157198121555026, 3.0674054407649343, 3.585019308639545, 3.1601955293408963], "WB.NKC": [null, 0.8721890679454956, 1.4394108986731955, 2.9332057155126092, 2.023569512923045, 2.3463339009661324, 2.181966295859312, 2.0199153146313824, 1.7249308185754004, 0.9688889277315604, null, 0.5329708185102691, 0.5080219575676086, 0.5490657842055691, 0.2396090041762608], "WB.KVC": [1.0141305385633492, 1.0476143638548847, 0.809700017359832, 0.6269345318195603, 0.596070328459153, 0.6868802582489212, 0.6118680284053766, 0.5611848527620302, 0.7199866446564004, 0.7951709838139764, 0.8547991232341196, 0.7346759833203963, 1.409514722773979, 2.757824397864757, 4.86408513903466], "WB.SKC": [0.7468979498524483, 0.5363549805188133, 0.5848651249648827, 0.6029759244268907, null, 0.4337077181580447, 0.4692516547861215, 0.4242499627576045, 0.5099683629674179, 0.2642989565207902, null, 0.5916016081727843, 0.7323768974077842, 0.7421500170309703, 0.7900201207131078]}, "v0": 3400}}, "config": {"invert_events_simultaneously": false, "mean": "robust", "v0": 3400, "rho0": 2600, "R0": 1, "free_surface": 4, "freqs": {"width": 1, "cfreqs": [0.75, 1.06, 1.5, 2.1, 3.0, 4.2, 6.0, 8.5, 12.0, 17.0, 24.0, 33.9, 48.0, 67.9, 96.0]}, "filter": {"corners": 2, "zerophase": true}, "optimize": {"method": "golden", "tol": 0.001}, "g0_bounds": [1e-06, 0.0001], "b_bounds": [0.001, 10], "seismic_moment_method": "robust_fit", "seismic_moment_options": {"fc": null, "n": null, "gamma": 2, "fc_lim": [0.1, 10], "num_points": 4}, "bulk_window": ["S-0.5s", "S+3.5s"], "coda_window": ["S+3.5s", ["S+50s", "2SNR"]], "noise_windows": [["P-10s", "P-5s"], ["P-5s", "P-1s"]], "weight": [1, "bulkwindow"], "remove_noise": true, "adjust_sonset": null, "remove_response": "full", "remove_response_options": {"water_level": 4}, "correct_for_elevation": false, "skip": {"coda_window": 5, "num_pairs": 3}}}
+2021-10-06 17:24:42,025 core  108435DEBUG   used time: 55.6s
