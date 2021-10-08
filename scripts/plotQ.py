@@ -5,7 +5,7 @@ import numpy as np
 from qopen.core import collect_results
 from qopen.util import gerr
 
-from util.misc import load_qopen_results
+from util.events import load_qopen
 
 
 VOGTL = {
@@ -42,7 +42,7 @@ def Q(q, obs='sc', v0=None, error=False):
 
 
 def _vogtland_results2Q():
-    q = load_qopen_results('../data/vogtland_results.json')
+    q = load_qopen('../data/vogtland_results.json')
     freq, Qsc = Q(q, 'sc')
     _, Qi = Q(q, 'i')
     freq = np.round(freq, 3).tolist()
@@ -55,7 +55,7 @@ def _vogtland_results2Q():
 
 
 def plotQ():
-    q1 = load_qopen_results('Q')
+    q1 = load_qopen('Q')
     fig = plt.figure(figsize=(8, 4))
     ax1 = fig.add_subplot(121)
     ax2 = fig.add_subplot(122, sharex=ax1, sharey=ax1)
