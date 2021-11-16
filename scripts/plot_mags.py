@@ -208,8 +208,8 @@ def comparison_Mw_vs_Ml():
             'this study, fig 9c, continous line': (0.95, 0.16),
             'this study, fig 9c, stroken line': (0.84, 0.39),
             'Jakoubková et al., 2018': (0.73, 0.66),
-            'Michalek & Fischer, 2013': (0.92, 0.80),
-            'Horalek & Silny, 2013': (0.75, 0.45),
+            'Michálek & Fischer, 2013': (0.92, 0.80),
+            'Horálek & Šílený, 2013': (0.75, 0.45),
             }
     fig = plt.figure()
     ax = fig.add_subplot(111)
