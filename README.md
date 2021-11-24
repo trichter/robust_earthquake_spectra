@@ -4,7 +4,9 @@ This repository contains the source code for the reproduction of results and fig
 
 Tom Eulenfeld, Sebastian Heimann, Torsten Dahm and Ulrich Wegler (2021),
 Fast and robust earthquake source spectra and moment magnitudes from envelope inversion,
-submitted to *Bulletin of the Seismological Society of America*. <!---[[preprint]()]-->
+*Bulletin of the Seismological Society of America*,
+doi: [10.1785/0120210200](https://doi.org/10.1785/0120210200).
+[[pdf](https://arxiv.org/pdf/2107.11083)]
 
 Additionally, this repository contains result files and figures.
 
